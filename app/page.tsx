@@ -9,7 +9,7 @@ import Strategy from "@/components/Strategy";
 
 export default function Home() {
   return (
-    <>
+    <div className="px-52">
       <Navbar />
       <Hero />
       <About />
@@ -18,6 +18,6 @@ export default function Home() {
       <Strategy/>
       <FAQ/>
       <Footer/>
-    </>
+    </div>
   );
 }

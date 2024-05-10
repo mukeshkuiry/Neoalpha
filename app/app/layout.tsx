@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div>
+    <div className="bg-[#f4f6f9] px-10 text-black">
       <Navbar />
       {children}
     </div>

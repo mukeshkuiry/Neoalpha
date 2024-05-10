@@ -36,7 +36,7 @@ export default function Navbar() {
   }
 
   return (
-    <div className="flex justify-between items-center py-4 px-6 text-white">
+    <div className="flex justify-between items-center py-4 px-6 text-black">
       <h1 className="text-3xl font-bold">Neoalpha</h1>
       <div className="flex items-center mt-4 bg-green-400 hover:bg-green-500 hover:scale-105 transition-all cursor-pointer text-black text-xl pl-6 pr-2 py-2 rounded-full">
         <p>🎉 Join the referral program </p>{" "}
@@ -45,7 +45,7 @@ export default function Navbar() {
         </p>
       </div>
       {connectedAccount !== "null" ? (
-        <p className="text-lg hover:text-gray-300 bg-gray-800 rounded-full px-4 py-1">
+        <p className="text-lg hover:text-gray-600 cursor-pointer bg-gray-300 rounded-full px-4 py-1">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/image.png"
@@ -57,7 +57,7 @@ export default function Navbar() {
       ) : (
         <button
           onClick={connectMetamask}
-          className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-1 rounded-sm"
+          className="bg-purple-500 hover:bg-purple-600 text-white px-6 py-2 rounded-lg"
         >
           Connect wallet
         </button>

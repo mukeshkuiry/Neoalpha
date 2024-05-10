@@ -10,7 +10,7 @@ import { BsTelegram } from "react-icons/bs";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="text-white py-8 px-4">
+    <footer className="text-black py-8 px-4">
       <div className="flex flex-col justify-between items-center space-y-6">
         <div className="flex items-center mb">
           <Link href={"#"} className="mr-4 hover:text-gray-400">
@@ -39,42 +39,42 @@ const Footer: React.FC = () => {
         </div>
         <Link
           href="mailto:support@locus.finance"
-          className="hover:text-gray-400"
+          className="hover:text-gray-400 text-gray-700"
         >
           support@locus.finance
         </Link>
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-6 text-white">
           <Link
             href={"#"}
-            className="bg-gray-600 rounded-full px-5 py-2 flex justify-center items-center gap-2 hover:bg-gray-500 hover:text-gray-400"
+            className="bg-gray-600 rounded-full px-5 py-2 flex justify-center items-center gap-2 hover:bg-gray-500 hover:scale-105 transition-all"
           >
             <DiscordFilled />
             Discord
           </Link>
           <Link
             href={"#"}
-            className="bg-gray-600 rounded-full px-5 py-2 flex justify-center items-center gap-2 hover:bg-gray-500 hover:text-gray-400"
+            className="bg-gray-600 rounded-full px-5 py-2 flex justify-center items-center gap-2 hover:bg-gray-500 hover:scale-105 transition-all"
           >
             <TwitterCircleFilled />
             Twitter
           </Link>
           <Link
             href={"#"}
-            className="bg-gray-600 rounded-full px-5 py-2 flex justify-center items-center gap-2 hover:bg-gray-500 hover:text-gray-400"
+            className="bg-gray-600 rounded-full px-5 py-2 flex justify-center items-center gap-2 hover:bg-gray-500 hover:scale-105 transition-all"
           >
             <BsTelegram />
             Telegram
           </Link>
           <Link
             href={"#"}
-            className="bg-gray-600 rounded-full px-5 py-2 flex justify-center items-center gap-2 hover:bg-gray-500 hover:text-gray-400"
+            className="bg-gray-600 rounded-full px-5 py-2 flex justify-center items-center gap-2 hover:bg-gray-500 hover:scale-105 transition-all"
           >
             <YoutubeFilled />
             YouTube
           </Link>
           <Link
             href={"#"}
-            className="bg-gray-600 rounded-full px-5 py-2 flex justify-center items-center gap-2 hover:bg-gray-500 hover:text-gray-400"
+            className="bg-gray-600 rounded-full px-5 py-2 flex justify-center items-center gap-2 hover:bg-gray-500 hover:scale-105 transition-all"
           >
             <GithubFilled />
             Github

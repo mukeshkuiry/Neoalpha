@@ -5,7 +5,7 @@ import PortfolioChart from "./PortfolioChart";
 export default function Portfolio() {
   const [balance, setBalance] = useState<number>(2450.56);
   return (
-    <div className="rounded-xl bg-gray-500 p-8 w-4/5">
+    <div className="rounded-xl bg-white shadow-lg p-8 w-4/5">
       <div className="flex justify-between items-center">
         <div>
           <p>My indexes balance</p>

@@ -14,7 +14,7 @@ interface Index {
 
 const IndexCard: React.FC<{ index: Index }> = ({ index }) => {
   return (
-    <div className="bg-gray-700 rounded-2xl shadow-lg p-8 m-2 hover:bg-[#571d66] cursor-pointer transition-all transform hover:scale-105">
+    <div className="bg-white rounded-2xl shadow-lg p-8 m-2 hover:bg-green-400 cursor-pointer transition-all transform hover:scale-105">
       <div className="flex justify-between items-center mb-4">
         <div className="flex items-center">
           <img src={index.logo} alt="Logo" className="w-8 h-8 mr-2" />
@@ -26,14 +26,14 @@ const IndexCard: React.FC<{ index: Index }> = ({ index }) => {
       </div>
       <div className="text-gray-400 text-sm pt-3">{index.type}</div>
       <h1 className="font-bold text-xl">{index.name}</h1>
-      <div className="bg-gray-600 text-sm rounded-full w-fit px-3 py-1 my-2 -ml-1">
+      <div className="bg-gray-200 text-sm rounded-full w-fit px-3 py-1 my-2 -ml-1">
         {index.moto}
       </div>
       <div className="flex gap-2">
         {index.tags.map((tag, tagKey) => (
           <span
             key={tagKey}
-            className="rounded-full border border-gray-500 px-2 text-white text-sm"
+            className="rounded-full border border-gray-500 px-2 text-gray-700 text-sm"
           >
             {tag}
           </span>
