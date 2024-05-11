@@ -5,12 +5,19 @@ import Chart from "chart.js/auto";
 const PortfolioChart: React.FC = () => {
   const chartContainerRef = useRef<HTMLCanvasElement>(null);
   const chartInstanceRef = useRef<Chart>();
-  const labels: string[] = ["1/1/2024", "23/8/2024"];
 
   useEffect(() => {
     const ctx = chartContainerRef.current?.getContext("2d");
 
     if (ctx) {
+      const gradientStroke = ctx.createLinearGradient(0, 0, 0, 400);
+      gradientStroke.addColorStop(0, "#00ff80"); // Start shade (lighter green)
+      gradientStroke.addColorStop(1, "#00cc66"); // End shade (darker green)
+
+      const gradientFill = ctx.createLinearGradient(0, 0, 0, 400);
+      gradientFill.addColorStop(0, "rgba(0, 255, 128, 0.1)"); // Start shade with opacity (lighter green)
+      gradientFill.addColorStop(1, "rgba(0, 204, 102, 0)"); // End shade with opacity (darker green)
+
       const labels: string[] = [];
       const data: number[] = [];
       let currentDate = new Date();
@@ -33,9 +40,10 @@ const PortfolioChart: React.FC = () => {
             {
               label: "",
               data: data,
-              borderColor: "#00FF00", // Green color
-              backgroundColor: "rgba(0, 255, 0, 0.1)", // Green color with opacity
-              tension: 0.6, // Adjust the tension here
+              borderColor: gradientStroke,
+              backgroundColor: gradientFill, // Apply gradient fill color
+              tension: 0.6,
+              fill: true,
               borderWidth: 1,
               pointRadius: 0, // Hide points
             },
@@ -46,20 +54,10 @@ const PortfolioChart: React.FC = () => {
           maintainAspectRatio: false,
           scales: {
             x: {
-              grid: {
-                display: true,
-              },
-              ticks: {
-                display: false,
-              },
+              display: false, // Hide x axis
             },
             y: {
-              grid: {
-                display: true,
-              },
-              ticks: {
-                display: false,
-              },
+              display: false, // Hide y axis
             },
           },
           hover: {
@@ -68,7 +66,7 @@ const PortfolioChart: React.FC = () => {
           },
           plugins: {
             legend: {
-              display: false, // Hide legend
+              display: false,
             },
           },
         },

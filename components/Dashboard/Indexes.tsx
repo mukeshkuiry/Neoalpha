@@ -1,4 +1,6 @@
+"use client"
 /* eslint-disable @next/next/no-img-element */
+import { useRouter } from "next/navigation";
 import React from "react";
 import { FiUsers } from "react-icons/fi";
 
@@ -13,8 +15,14 @@ interface Index {
 }
 
 const IndexCard: React.FC<{ index: Index }> = ({ index }) => {
+  const router = useRouter();
   return (
-    <div className="bg-white rounded-2xl shadow-lg p-8 m-2 hover:bg-green-400 cursor-pointer transition-all transform hover:scale-105">
+    <div
+      className="bg-white rounded-2xl shadow-lg p-8 m-2 hover:bg-green-400 cursor-pointer transition-all transform hover:scale-105"
+      onClick={() => {
+        router.push(`/vault/${index.name}`);
+      }}
+    >
       <div className="flex justify-between items-center mb-4">
         <div className="flex items-center">
           <img src={index.logo} alt="Logo" className="w-8 h-8 mr-2" />

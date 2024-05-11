@@ -1,5 +1,6 @@
 "use client";
 import { ArrowUpOutlined } from "@ant-design/icons";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Web3 } from "web3";
 
@@ -34,34 +35,46 @@ export default function Navbar() {
       alert("Please download metamask");
     }
   }
+  const router = useRouter();
 
   return (
     <div className="flex justify-between items-center py-4 px-6 text-black">
-      <h1 className="text-3xl font-bold">Neoalpha</h1>
-      <div className="flex items-center mt-4 bg-green-400 hover:bg-green-500 hover:scale-105 transition-all cursor-pointer text-black text-xl pl-6 pr-2 py-2 rounded-full">
-        <p>🎉 Join the referral program </p>{" "}
-        <p className="bg-white text-black p-2 px-3 ml-4 rounded-full rotate-45 hover:rotate-90 transition-all">
-          <ArrowUpOutlined />
-        </p>
+      <h1
+        className="text-3xl font-bold"
+        onClick={() => {
+          router.push("/app");
+        }}
+      >
+        Neoalpha
+      </h1>
+
+      <div className="flex gap-4 justify-center items-center">
+        <div className="flex items-center bg-green-400 hover:bg-green-500 hover:scale-105 transition-all cursor-pointer h-fit text-black text-lg pr-1.5 p-1 pl-4 rounded-full">
+          <p>Referral rewards </p>{" "}
+          <p className="bg-white text-black p-1 px-2 ml-4 rounded-full rotate-45 hover:rotate-90 transition-all">
+            <ArrowUpOutlined />
+          </p>
+        </div>
+        {connectedAccount !== "null" ? (
+          <p className="text-md hover:text-gray-600 cursor-pointer bg-gray-300 rounded-full px-4 py-1.5">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/image.png"
+              alt="Metamask"
+              className="w-6 h-6 inline-block mr-2"
+            />
+            {connectedAccount.substring(0, 6)}...
+            {connectedAccount.substring(37)}
+          </p>
+        ) : (
+          <button
+            onClick={connectMetamask}
+            className="bg-purple-500 hover:bg-purple-600 text-white px-6 py-2 rounded-lg"
+          >
+            Connect wallet
+          </button>
+        )}
       </div>
-      {connectedAccount !== "null" ? (
-        <p className="text-lg hover:text-gray-600 cursor-pointer bg-gray-300 rounded-full px-4 py-1">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/image.png"
-            alt="Metamask"
-            className="w-6 h-6 inline-block mr-2"
-          />
-          {connectedAccount.substring(0, 6)}...{connectedAccount.substring(37)}
-        </p>
-      ) : (
-        <button
-          onClick={connectMetamask}
-          className="bg-purple-500 hover:bg-purple-600 text-white px-6 py-2 rounded-lg"
-        >
-          Connect wallet
-        </button>
-      )}
     </div>
   );
 }
