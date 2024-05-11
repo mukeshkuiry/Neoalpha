@@ -1,14 +1,14 @@
 "use client";
-import { ArrowUpOutlined } from "@ant-design/icons";
-import { useRouter } from "next/navigation";
+import { ArrowUpOutlined, UserOutlined } from "@ant-design/icons";
 import { useEffect, useState } from "react";
 import { Web3 } from "web3";
+import { Popover, Button } from "antd";
+import { useRouter } from "next/navigation";
 
 export default function Navbar() {
   const [connectedAccount, setConnectedAccount] = useState("null");
 
   useEffect(() => {
-    //get connected account from localstorage
     const connectedAccount = localStorage.getItem("connectedAccount");
     if (connectedAccount) {
       setConnectedAccount(connectedAccount);
@@ -16,56 +16,65 @@ export default function Navbar() {
   }, []);
 
   async function connectMetamask() {
-    //check metamask is installed
     if ((window as any).ethereum) {
-      // instantiate Web3 with the injected provider
       const web3 = new Web3((window as any).ethereum);
-
-      //request user to connect accounts (Metamask will prompt)
       await (window as any).ethereum.request({ method: "eth_requestAccounts" });
-
-      //get the connected accounts
       const accounts = await web3.eth.getAccounts();
-
-      //show the first connected account in the react page
       setConnectedAccount(accounts[0]);
-      // add to localstorage
       localStorage.setItem("connectedAccount", accounts[0]);
     } else {
-      alert("Please download metamask");
+      alert("Please download Metamask");
     }
   }
+
   const router = useRouter();
 
   return (
     <div className="flex justify-between items-center py-4 px-6 text-black">
       <h1
-        className="text-3xl font-bold"
-        onClick={() => {
-          router.push("/app");
-        }}
+        onClick={() => router.push("/app")}
+        className="text-3xl font-bold cursor-pointer"
       >
         Neoalpha
       </h1>
 
       <div className="flex gap-4 justify-center items-center">
-        <div className="flex items-center bg-green-400 hover:bg-green-500 hover:scale-105 transition-all cursor-pointer h-fit text-black text-lg pr-1.5 p-1 pl-4 rounded-full">
+        <div
+          className="flex items-center bg-green-400 hover:bg-green-500 hover:scale-105 transition-all cursor-pointer h-fit text-black text-lg pr-1.5 p-1 pl-4 rounded-full"
+          onClick={() => router.push("/referral")}
+        >
           <p>Referral rewards </p>{" "}
           <p className="bg-white text-black p-1 px-2 ml-4 rounded-full rotate-45 hover:rotate-90 transition-all">
             <ArrowUpOutlined />
           </p>
         </div>
         {connectedAccount !== "null" ? (
-          <p className="text-md hover:text-gray-600 cursor-pointer bg-gray-300 rounded-full px-4 py-1.5">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/image.png"
-              alt="Metamask"
-              className="w-6 h-6 inline-block mr-2"
-            />
-            {connectedAccount.substring(0, 6)}...
-            {connectedAccount.substring(37)}
-          </p>
+          <Popover
+            placement="bottomRight"
+            content={
+              <div className="flex flex-col justify-center items-center">
+                <p>John Doe</p>
+                <p className="text-gray-600">example@example.com</p>
+                <p className="text-gray-600">
+                  {connectedAccount.substring(0, 6)}...
+                  {connectedAccount.substring(37)}
+                </p>
+                <Button
+                  type="primary"
+                  className="mt-2 rounded-full w-full"
+                  onClick={() => console.log("Go to Profile")}
+                >
+                  Go to Profile
+                </Button>
+              </div>
+            }
+            trigger="hover"
+          >
+            <p className="text-md hover:text-gray-600 cursor-pointer bg-gray-300 rounded-full px-4 py-1.5">
+              <UserOutlined /> {connectedAccount.substring(0, 6)}...
+              {connectedAccount.substring(37)}
+            </p>
+          </Popover>
         ) : (
           <button
             onClick={connectMetamask}

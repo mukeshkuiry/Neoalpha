@@ -29,7 +29,7 @@ const IndexCard: React.FC<{ index: Index }> = ({ index }) => {
         </div>
         <div className="flex items-center">
           <FiUsers className="mr-1" />
-          <span className="text-gray-400">1000+</span>
+          <span className="text-gray-400">{(Math.random()*100).toFixed(0)}</span>
         </div>
       </div>
       <div className="text-gray-400 text-sm pt-3">{index.type}</div>
@@ -71,7 +71,7 @@ const Indexes: React.FC = () => {
       tags: ["LSDfi", "Low risk"],
       weeklyApi: "7.11%",
       valueTvl: "$289.7k",
-      logo: "https://via.placeholder.com/50", // Placeholder image URL
+      logo: "/eth.png", // Placeholder image URL
     },
     {
       type: "Basket of tokens",
@@ -80,7 +80,7 @@ const Indexes: React.FC = () => {
       tags: ["Yield Bearing", "Low risk"],
       weeklyApi: "25.63%",
       valueTvl: "$141.4k",
-      logo: "https://via.placeholder.com/50", // Placeholder image URL
+      logo: "/eth.png", // Placeholder image URL
     },
     {
       type: "Basket of tokens",
@@ -89,7 +89,7 @@ const Indexes: React.FC = () => {
       tags: ["Yield Bearing", "Low risk"],
       weeklyApi: "34.41%",
       valueTvl: "$89.5k",
-      logo: "https://via.placeholder.com/50", // Placeholder image URL
+      logo: "/eth.png", // Placeholder image URL
     },
     {
       type: "USDC.e notional",
@@ -98,7 +98,7 @@ const Indexes: React.FC = () => {
       tags: ["Market-neutral", "Low risk"],
       weeklyApi: "48.21%",
       valueTvl: "$252.3k",
-      logo: "https://via.placeholder.com/50", // Placeholder image URL
+      logo: "/eth.png", // Placeholder image URL
     },
     {
       type: "Mutual Index",
@@ -107,7 +107,7 @@ const Indexes: React.FC = () => {
       tags: ["Coming Soon"],
       weeklyApi: "Coming Soon",
       valueTvl: "Coming Soon",
-      logo: "https://via.placeholder.com/50", // Placeholder image URL
+      logo: "/eth.png", // Placeholder image URL
     },
     {
       type: "Pendal Index",
@@ -116,7 +116,7 @@ const Indexes: React.FC = () => {
       tags: ["Coming Soon"],
       weeklyApi: "Coming Soon",
       valueTvl: "Coming Soon",
-      logo: "https://via.placeholder.com/50", // Placeholder image URL
+      logo: "/eth.png", // Placeholder image URL
     },
   ];
 

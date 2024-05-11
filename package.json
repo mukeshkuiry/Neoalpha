@@ -12,10 +12,12 @@
     "@ant-design/icons": "^5.3.7",
     "antd": "^5.17.0",
     "chart.js": "^4.4.2",
+    "moment": "^2.30.1",
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.2.1",
+    "recharts": "^2.12.7",
     "web3": "^4.8.0"
   },
   "devDependencies": {

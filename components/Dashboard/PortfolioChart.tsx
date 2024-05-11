@@ -54,7 +54,13 @@ const PortfolioChart: React.FC = () => {
           maintainAspectRatio: false,
           scales: {
             x: {
-              display: false, // Hide x axis
+              display: true, // Hide x axis
+              ticks:{
+                display: false
+              },
+              grid: {
+                display: false,
+              },
             },
             y: {
               display: false, // Hide y axis
