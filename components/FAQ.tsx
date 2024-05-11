@@ -47,7 +47,9 @@ export default function FAQ() {
     <div className="flex flex-col justify-center items-center">
       <h1 className="text-3xl font-bold mb-4">FAQ</h1>
       <p className="text-lg mb-4">Frequently Asked Questions</p>
-      <Collapse items={items} className="w-full text-whte bg-white" bordered accordion />
+      <div className="w-full lg:w-2/3">
+        <Collapse items={items} bordered accordion />
+      </div>
     </div>
   );
 }

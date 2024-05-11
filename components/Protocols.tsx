@@ -1,48 +1,44 @@
 import Image from "next/image";
+
 export default function Protocols() {
   return (
-    <div className="flex text-center flex-col mt-20">
+    <div className="flex flex-col items-center mt-20">
       <h1 className="text-3xl m-8">Protocols built on top of NOYA</h1>
-      <div className="flex justify-between items-center">
-        <div className="flex justify-center p-4 bg-gray-900 rounded-xl w-1/2 h-28 items-center m-4">
-          <div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="bg-gray-900 rounded-xl flex p-4 items-center">
+          <div className="mr-4">
             <Image src="/uni.svg" width={80} height={80} alt="Logo" />
           </div>
           <div>
-            <h1>Trustless Uniswap Liquidity Provisioning.</h1>
-            <p>(TULP) Multi-Tier, Multi-Chain, Multi-Asset pools</p>
+            <h1 className="text-white">Trustless Uniswap Liquidity Provisioning.</h1>
+            <p className="text-gray-300">(TULP) Multi-Tier, Multi-Chain, Multi-Asset pools</p>
           </div>
         </div>
-        <div className="flex justify-center p-4 bg-gray-900 rounded-xl w-1/2 h-28 items-center  m-4">
-          <div>
+        <div className="bg-gray-900 rounded-xl flex p-4 items-center">
+          <div className="mr-4">
             <Image src="/lyfa.svg" width={80} height={80} alt="Logo" />
           </div>
           <div>
-            <h1>Leveraged Yield Farming Aggregator.</h1>
-            <p>(LYFA) LTV management using ZKML</p>
+            <h1 className="text-white">Leveraged Yield Farming Aggregator.</h1>
+            <p className="text-gray-300">(LYFA) LTV management using ZKML</p>
           </div>
         </div>
-      </div>
-      <div className="flex justify-between items-center">
-        <div className="flex justify-center p-4 bg-gray-900 rounded-xl w-1/2 h-28 items-center  m-4">
-          <div>
+        <div className="bg-gray-900 rounded-xl flex p-4 items-center mt-8 md:mt-0">
+          <div className="mr-4">
             <Image src="/nola.svg" width={80} height={80} alt="Logo" />
           </div>
           <div>
-            <h1>Native Omnichain Lending Aggregator .</h1>
-            <p>(NOLA) Optimizing borrowing rates</p>
+            <h1 className="text-white">Native Omnichain Lending Aggregator.</h1>
+            <p className="text-gray-300">(NOLA) Optimizing borrowing rates</p>
           </div>
         </div>
-        <div className="flex justify-center p-4 bg-gray-900 rounded-xl w-1/2 h-28 items-center  m-4">
-          <div>
+        <div className="bg-gray-900 rounded-xl flex p-4 items-center mt-8 md:mt-0">
+          <div className="mr-4">
             <Image src="/noya.svg" width={80} height={80} alt="Logo" />
           </div>
           <div>
-            <h1>Native Omnichain Yield Aggregator .</h1>
-            <p>
-              (NOYA) Aggregating yield and diversifying risk across multiple
-              chains
-            </p>
+            <h1 className="text-white">Native Omnichain Yield Aggregator.</h1>
+            <p className="text-gray-300">(NOYA) Aggregating yield and diversifying risk across multiple chains</p>
           </div>
         </div>
       </div>

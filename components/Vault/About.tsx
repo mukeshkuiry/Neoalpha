@@ -19,26 +19,33 @@ export default function About() {
           holdings.
         </p>
         <h1 className="text-2xl mb-2">What&apos;s inside?</h1>
-        <div className="flex gap-4 mb-6">
-          <div className="h-32 w-32 bg-purple-500 rounded-lg"></div>
-          <div className="h-32 w-32 bg-purple-500 rounded-lg"></div>
-          <div className="h-32 w-32 bg-purple-500 rounded-lg"></div>
-          <div className="h-32 w-32 bg-purple-500 rounded-lg"></div>
-          <div className="h-32 w-32 bg-purple-500 rounded-lg"></div>
+        <div className="flex flex-wrap gap-4 mb-6">
+          <div className="h-32 sm:w-1/2 md:w-1/3 lg:w-1/5 bg-purple-500 rounded-lg"></div>
+          <div className="h-32 sm:w-1/2 md:w-1/3 lg:w-1/5 bg-purple-500 rounded-lg"></div>
+          <div className="h-32 sm:w-1/2 md:w-1/3 lg:w-1/5 bg-purple-500 rounded-lg"></div>
+          <div className="h-32 sm:w-1/2 md:w-1/3 lg:w-1/5 bg-purple-500 rounded-lg"></div>
+          <div className="h-32 sm:w-1/2 md:w-1/3 lg:w-1/5 bg-purple-500 rounded-lg"></div>
         </div>
-        <Image
-          src="/asses.png"
-          alt="Assets image"
-          height={200}
-          width={700}
-          className="mb-6"
-        />
-        <h1 className="text-2xl mb-2">
-          The process of yield generation
-        </h1>
-        <Image src="/flow.svg" alt="Flow image" height={200} width={700} />
+        <div className="mb-6">
+          <Image
+            src="/asses.png"
+            alt="Assets image"
+            height={200}
+            width={700}
+            className="w-full"
+          />
+        </div>
+        <h1 className="text-2xl mb-2">The process of yield generation</h1>
+        <div className="mb-6">
+          <Image
+            src="/flow.svg"
+            alt="Flow image"
+            height={200}
+            width={700}
+            className="w-full"
+          />
+        </div>
       </div>
-      
     </div>
   );
 }

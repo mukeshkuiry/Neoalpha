@@ -9,15 +9,17 @@ import Strategy from "@/components/Strategy";
 
 export default function Home() {
   return (
-    <div className="px-52">
+    <div>
       <Navbar />
-      <Hero />
-      <About />
-      <Benifits/>
-      <Protocols/>
-      <Strategy/>
-      <FAQ/>
-      <Footer/>
+      <div className="px-10 md:px-32 lg:px-52">
+        <Hero />
+        <About />
+        <Benifits />
+        <Protocols />
+        <Strategy />
+        <FAQ />
+        <Footer />
+      </div>
     </div>
   );
 }

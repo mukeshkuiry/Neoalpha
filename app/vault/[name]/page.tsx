@@ -5,14 +5,14 @@ import Image from "next/image";
 
 type Props = {
   params: {
-      name: string;
+    name: string;
   };
 };
 
 /* eslint-disable @next/next/no-img-element */
 const Vault: React.FC<Props> = ({ params }) => {
   // get name from the props query
-  
+
   const { name } = params;
   // convert name to uppercase and remove %20
   const _name = name.replaceAll("%20", " ");
