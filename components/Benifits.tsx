@@ -19,7 +19,7 @@ export default function Benifits() {
         </div>
         <div className="w-full lg:w-1/2">
           {/* video here */}
-          <video autoPlay loop muted className="w-full">
+          <video autoPlay controls={false} loop muted className="w-full">
             <source src="/ai.mp4" type="video/mp4" />
           </video>
         </div>
@@ -27,7 +27,7 @@ export default function Benifits() {
       <div className="flex flex-col-reverse lg:flex-row justify-between items-center">
         <div className="w-full lg:w-1/2">
           {/* video here */}
-          <video autoPlay loop muted className="w-full">
+          <video autoPlay loop controls={false}  muted className="w-full">
             <source src="/lowest-fees.mp4" type="video/mp4" />
           </video>
         </div>
@@ -57,7 +57,7 @@ export default function Benifits() {
         </div>
         <div className="w-full lg:w-1/2">
           {/* video here */}
-          <video autoPlay loop muted className="w-full">
+          <video autoPlay controls={false}  loop muted className="w-full">
             <source src="/liquidity-flows.mp4" type="video/mp4" />
           </video>
         </div>

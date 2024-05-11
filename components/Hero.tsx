@@ -33,7 +33,7 @@ export default function Hero() {
       </div>
       <div className="lg:w-1/2 mt-8 lg:mt-0">
         {/* video here */}
-        <video autoPlay loop muted className="w-full">
+        <video autoPlay controls={false} loop muted className="w-full">
           <source src="/hero.mp4" type="video/mp4" />
         </video>
       </div>
