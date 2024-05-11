@@ -81,16 +81,27 @@ const PortfolioChart: React.FC = () => {
       chartInstanceRef.current = chartInstance;
     }
 
+    const resizeObserver = new ResizeObserver(() => {
+      if (chartInstanceRef.current) {
+        chartInstanceRef.current.resize();
+      }
+    });
+
+    if (chartContainerRef.current) {
+      resizeObserver.observe(chartContainerRef.current);
+    }
+
     return () => {
-      // Cleanup chart instance on unmount
+      // Cleanup chart instance and resize observer on unmount
       if (chartInstanceRef.current) {
         chartInstanceRef.current.destroy();
       }
+      resizeObserver.disconnect();
     };
   }, []);
 
   return (
-    <div className="relative w-full h-56">
+    <div className="relative w-full aspect-w-2 aspect-h-1">
       <canvas ref={chartContainerRef}></canvas>
     </div>
   );

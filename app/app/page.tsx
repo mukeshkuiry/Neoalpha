@@ -4,7 +4,7 @@ import Portfolio from "@/components/Dashboard/Portfolio";
 
 export default function Page() {
   return (
-    <div className="flex flex-col justify-center items-center mt-8 px-32">
+    <div className="flex flex-col justify-center items-center mt-8 lg:px-32">
       <Portfolio />
       <Indexes />
       <Footer />

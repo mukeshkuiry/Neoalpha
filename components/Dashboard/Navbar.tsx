@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import { ArrowUpOutlined, UserOutlined } from "@ant-design/icons";
 import { useEffect, useState } from "react";
 import { Web3 } from "web3";
@@ -30,17 +30,17 @@ export default function Navbar() {
   const router = useRouter();
 
   return (
-    <div className="flex justify-between items-center py-4 px-6 text-black">
+    <div className="flex flex-col lg:flex-row justify-between items-center py-4 px-6 text-black">
       <h1
         onClick={() => router.push("/app")}
-        className="text-3xl font-bold cursor-pointer"
+        className="text-3xl font-bold cursor-pointer mb-4 lg:mb-0 lg:mr-8"
       >
         Neoalpha
       </h1>
 
-      <div className="flex gap-4 justify-center items-center">
+      <div className="flex justify-between items-center w-full lg:w-auto">
         <div
-          className="flex items-center bg-green-400 hover:bg-green-500 hover:scale-105 transition-all cursor-pointer h-fit text-black text-lg pr-1.5 p-1 pl-4 rounded-full"
+          className="flex items-center bg-green-400 hover:bg-green-500 hover:scale-105 transition-all cursor-pointer h-fit text-black text-lg pr-1.5 p-1 pl-4 rounded-full mb-4 lg:mb-0 lg:mr-4"
           onClick={() => router.push("/referral")}
         >
           <p>Referral rewards </p>{" "}

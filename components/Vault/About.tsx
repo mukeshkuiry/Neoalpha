@@ -19,12 +19,12 @@ export default function About() {
           holdings.
         </p>
         <h1 className="text-2xl mb-2">What&apos;s inside?</h1>
-        <div className="flex flex-wrap gap-4 mb-6">
-          <div className="h-32 sm:w-1/2 md:w-1/3 lg:w-1/5 bg-purple-500 rounded-lg"></div>
-          <div className="h-32 sm:w-1/2 md:w-1/3 lg:w-1/5 bg-purple-500 rounded-lg"></div>
-          <div className="h-32 sm:w-1/2 md:w-1/3 lg:w-1/5 bg-purple-500 rounded-lg"></div>
-          <div className="h-32 sm:w-1/2 md:w-1/3 lg:w-1/5 bg-purple-500 rounded-lg"></div>
-        </div>
+        {/* <div className="flex flex-wrap gap-4 mb-6">
+          <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 bg-purple-500 rounded-lg"></div>
+          <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 bg-purple-500 rounded-lg"></div>
+          <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 bg-purple-500 rounded-lg"></div>
+          <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 bg-purple-500 rounded-lg"></div>
+        </div> */}
         <div className="mb-6">
           <Image
             src="/asses.png"

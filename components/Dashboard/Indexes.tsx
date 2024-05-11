@@ -1,7 +1,7 @@
-"use client"
+"use client";
 /* eslint-disable @next/next/no-img-element */
-import { useRouter } from "next/navigation";
 import React from "react";
+import { useRouter } from "next/navigation";
 import { FiUsers } from "react-icons/fi";
 
 interface Index {
@@ -16,6 +16,7 @@ interface Index {
 
 const IndexCard: React.FC<{ index: Index }> = ({ index }) => {
   const router = useRouter();
+
   return (
     <div
       className="bg-white rounded-2xl shadow-lg p-8 m-2 hover:bg-green-400 cursor-pointer transition-all transform hover:scale-105"
@@ -24,15 +25,14 @@ const IndexCard: React.FC<{ index: Index }> = ({ index }) => {
       }}
     >
       <div className="flex justify-between items-center mb-4">
-        <div className="flex items-center">
-          <img src={index.logo} alt="Logo" className="w-8 h-8 mr-2" />
-        </div>
+        <img src={index.logo} alt="Logo" className="w-8 h-8 mr-2" />
+
         <div className="flex items-center">
           <FiUsers className="mr-1" />
-          <span className="text-gray-400">{(Math.random()*100).toFixed(0)}</span>
+          <p className="text-gray-400">35</p>
         </div>
       </div>
-      <div className="text-gray-400 text-sm pt-3">{index.type}</div>
+      <p className="text-gray-400 text-sm pt-3">{index.type}</p>
       <h1 className="font-bold text-xl">{index.name}</h1>
       <div className="bg-gray-200 text-sm rounded-full w-fit px-3 py-1 my-2 -ml-1">
         {index.moto}
@@ -123,7 +123,7 @@ const Indexes: React.FC = () => {
   return (
     <div className="mt-20">
       <h1 className="text-3xl text-center mb-8">All Indexes</h1>
-      <div className="grid grid-cols-3">
+      <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {data.map((index, indexKey) => (
           <IndexCard key={indexKey} index={index} />
         ))}

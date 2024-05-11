@@ -53,7 +53,7 @@ const ProfileDashboard: React.FC = () => {
   };
 
   return (
-    <div className="p-4 px-60">
+    <div className="p-4 lg:px-60">
       <h1 className="text-2xl font-bold mb-4">Referral Dashboard</h1>
       {/* Referrl code card with click to copy, share buttons */}
       <Card
@@ -71,7 +71,7 @@ const ProfileDashboard: React.FC = () => {
             />
           </Tooltip>
         </div>
-        <div className="flex items-center justify-between mt-4">
+        <div className="flex flex-col lg:flex-row ` items-center justify-between mt-4">
           <span className="text-lg">Share Referral Code</span>
           <div className="flex gap-2">
             <Button type="primary">Facebook</Button>

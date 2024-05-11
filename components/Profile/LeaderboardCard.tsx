@@ -1,7 +1,6 @@
 import React from 'react';
 import { Table, Tag } from 'antd';
 import { TrophyOutlined, CrownOutlined, FundOutlined } from '@ant-design/icons';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 interface LeaderboardUser {
   key: string;
@@ -56,8 +55,8 @@ const LeaderboardSection: React.FC<LeaderboardSectionProps> = ({ leaderboardData
   ];
 
   return (
-    <div className="flex flex-col items-center">
-      <Table columns={columns} dataSource={topThree} pagination={false} footer={() => `Your Rank: ${userRank}`} className='w-full' />
+    <div className="flex flex-col items-center w-full">
+      <Table columns={columns} dataSource={topThree} pagination={false} footer={() => `Your Rank: ${userRank}`} />
     </div>
   );
 };

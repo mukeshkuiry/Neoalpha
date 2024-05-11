@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import React, { useState, useEffect, useRef } from "react";
 import { Segmented, Switch } from "antd";
 import Chart from "chart.js/auto";
@@ -106,24 +106,20 @@ const BoostedChart: React.FC = () => {
 
   return (
     <div className="p-6 rounded-2xl bg-white mt-8">
-      <div
-        style={{ marginBottom: "1rem" }}
-        className="flex justify-between items-center"
-      >
-        <div>
-          <h1>Expeted APY</h1>
-          <p className="text-3xl mt-1">{aiEnabled ? 27 : 13}%</p>
+      <div className="mb-4">
+        <h1 className="text-xl font-bold mb-2">Expected APY</h1>
+        <p className="text-3xl mt-1">{aiEnabled ? "27" : "12"}%</p>
+      </div>
+      <div className="flex justify-between items-center mb-4">
+        <div className="flex gap-2">
+          <label htmlFor="aiToggle">Enable AI </label>
+          <Switch
+            id="aiToggle"
+            checked={aiEnabled}
+            onChange={toggleAi}
+          />
         </div>
-        <div className="flex justify-center items-center gap-2">
-          <div className="flex justify-center items-center gap-1">
-            <label htmlFor="aiToggle">Enable AI </label>
-            <Switch
-              id="aiToggle"
-              checked={aiEnabled}
-              onChange={toggleAi}
-              style={{ marginRight: "1rem" }}
-            />
-          </div>
+        <div className="flex gap-2">
           <Segmented
             size="small"
             options={[

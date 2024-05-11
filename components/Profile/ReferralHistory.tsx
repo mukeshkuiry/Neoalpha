@@ -47,6 +47,7 @@ const ReferralHistory: React.FC = () => {
       dataSource={referralHistoryData}
       pagination={false}
       bordered
+      scroll={{ x: true }}
     />
   );
 };
