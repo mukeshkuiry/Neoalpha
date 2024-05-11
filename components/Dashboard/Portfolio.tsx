@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import PortfolioChart from "./PortfolioChart";
+import { Segmented } from "antd";
 
 export default function Portfolio() {
   const [balance, setBalance] = useState<number>(2450.56);
@@ -12,11 +13,22 @@ export default function Portfolio() {
           <h1 className="text-4xl font-semibold">${balance}</h1>
           <p className="text-green-400 font-semibold">+2.3% +$52.81</p>
         </div>
-        <div className="flex gap-2">
-          <p className="rounded-md bg-gray-900 px-2 text-white">1D</p>
-          <p className="rounded-md bg-gray-900 px-2 text-white">1M</p>
-          <p className="rounded-md bg-gray-900 px-2 text-white">1Y</p>
-        </div>
+        <Segmented
+          options={[
+            {
+              value: "1D",
+              label: "1D",
+            },
+            {
+              value: "1M",
+              label: "1M",
+            },
+            {
+              value: "1Y",
+              label: "1Y",
+            },
+          ]}
+        />
       </div>
       <PortfolioChart />
     </div>
