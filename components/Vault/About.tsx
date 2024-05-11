@@ -24,7 +24,6 @@ export default function About() {
           <div className="h-32 sm:w-1/2 md:w-1/3 lg:w-1/5 bg-purple-500 rounded-lg"></div>
           <div className="h-32 sm:w-1/2 md:w-1/3 lg:w-1/5 bg-purple-500 rounded-lg"></div>
           <div className="h-32 sm:w-1/2 md:w-1/3 lg:w-1/5 bg-purple-500 rounded-lg"></div>
-          <div className="h-32 sm:w-1/2 md:w-1/3 lg:w-1/5 bg-purple-500 rounded-lg"></div>
         </div>
         <div className="mb-6">
           <Image

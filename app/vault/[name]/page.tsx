@@ -20,7 +20,7 @@ const Vault: React.FC<Props> = ({ params }) => {
   return (
     <div className="px-72 pb-10">
       <div className="flex items-center gap-4 mt-8">
-        <img src="https://via.placeholder.com/50" alt="logo" />
+        <img src="/eth.png" className="h-10 w-10" alt="logo" />
         <h1 className="text-4xl">{_name}</h1>
       </div>
       <div className="flex mt-5  items-center justify-between text-sm">
