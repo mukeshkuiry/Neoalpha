@@ -1,5 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import { Button } from "antd";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 export default function Benifits() {
@@ -8,58 +10,61 @@ export default function Benifits() {
     <div className="mt-32 flex flex-col justify-center items-center space-y-14">
       <div className="flex flex-col-reverse lg:flex-row justify-between items-center">
         <div className="w-full lg:w-1/2 pr-4 mb-8 lg:mb-0">
-          <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text text-center lg:text-left">
+          <h1 className="text-4xl mb-3 font-bold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text text-center lg:text-left">
             AI Agents you can trust
           </h1>
-          <p className="text-center lg:text-left">
-            ZKLiquid&apos;s ZKML implementation enables on-chain proving of private
-            & predictive AI models which enables trustless & verifiable strategy
-            execution.
+          <p className="text-center text-xl lg:text-left">
+            ZKLiquid&apos;s ZKML implementation enables on-chain proving of
+            private & predictive AI models which enables trustless & verifiable
+            strategy execution.
           </p>
         </div>
         <div className="w-full lg:w-1/2">
-          {/* video here */}
-          <video autoPlay controls={false} loop muted className="w-full">
-            <source src="/ai.mp4" type="video/mp4" />
-          </video>
+          <Image src="/ai.gif" width={500} height={500} alt="Trustless AI" />
         </div>
       </div>
       <div className="flex flex-col-reverse lg:flex-row justify-between items-center">
         <div className="w-full lg:w-1/2">
-          {/* video here */}
-          <video autoPlay loop controls={false}  muted className="w-full">
-            <source src="/lowest-fees.mp4" type="video/mp4" />
-          </video>
+          {/* video gif here */}
+          <Image src="/lowest.gif" width={500} height={500} alt="Lowest Fees" />
         </div>
         <div className="w-full lg:w-1/2 pl-4">
-          <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text text-center lg:text-left">
+          <h1 className="text-4xl mb-3 font-bold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text text-center lg:text-left">
             The lowest fees possible through DEX & Bridge aggregators.
           </h1>
-          <p className="text-center lg:text-left">
-            ZKLiquid elevates the DeFi experience by minimizing slippage and fees
-            through the seamless integration of bridge and DEX aggregators.
+          <p className="text-center text-xl lg:text-left">
+            ZKLiquid elevates the DeFi experience by minimizing slippage and
+            fees through the seamless integration of bridge and DEX aggregators.
           </p>
         </div>
       </div>
       <div className="flex flex-col-reverse lg:flex-row justify-between items-center">
         <div className="w-full lg:w-1/2 pr-4">
-          <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text text-center lg:text-left">
+          <h1 className="text-4xl mb-3 font-bold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text text-center lg:text-left">
             Liquidity flows to where it&apos;s needed the most.
           </h1>
-          <p className="text-center lg:text-left my-2 mb-5">
+          <p className="text-center text-xl lg:text-left my-2 mb-5">
             Self-learning and predictive AI Agents allocate liquidity across
             multiple chains, assets, and protocols, ensuring sustainable growth
             in an ever-evolving DeFi landscape.
           </p>
           <div className="flex justify-center lg:justify-start">
-            <Button onClick={() => router.push("/app")}>Go to dApp</Button>
+            <button
+              className="border border-blue-400 text-white py-2 px-4 rounded-md mt-4 w-full lg:w-auto"
+              onClick={() => router.push("/app")}
+            >
+              Go to dApp
+            </button>
           </div>
         </div>
         <div className="w-full lg:w-1/2">
           {/* video here */}
-          <video autoPlay controls={false}  loop muted className="w-full">
-            <source src="/liquidity-flows.mp4" type="video/mp4" />
-          </video>
+          <Image
+            src="/liquidity.gif"
+            width={500}
+            height={500}
+            alt="Liquidity"
+          />
         </div>
       </div>
     </div>

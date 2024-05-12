@@ -48,7 +48,13 @@ export default function FAQ() {
       <h1 className="text-3xl font-bold mb-4">FAQ</h1>
       <p className="text-lg mb-4">Frequently Asked Questions</p>
       <div className="w-full lg:w-2/3">
-        <Collapse items={items} bordered accordion />
+        <Collapse items={items} style={{
+          backgroundColor: "#fff",
+          color: "white",
+          borderRadius: "8px",
+          marginBottom: "20px",
+        
+        }} bordered accordion />
       </div>
     </div>
   );

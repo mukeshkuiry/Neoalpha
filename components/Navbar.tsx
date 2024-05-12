@@ -19,7 +19,7 @@ export default function Navbar() {
         src={"/logo.png"}
         width={200}
         height={100}
-        className="cursor-pointer"
+        className="cursor-pointer invert"
         alt="Logo"
       />
       <div className="flex items-center mt-4 lg:mt-0 lg:ml-4">
@@ -35,7 +35,7 @@ export default function Navbar() {
           </Link>
         </div>
         <button
-          className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-1 rounded-sm ml-6"
+          className="border border-blue-400 text-white py-2 px-4 rounded-md w-full lg:w-auto lg:ml-4"
           onClick={() => router.push("/app")}
         >
           Launch App

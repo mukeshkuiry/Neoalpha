@@ -34,7 +34,7 @@ export default function Protocols() {
         </div>
         <div className="bg-gray-900 rounded-xl flex p-4 items-center mt-8 md:mt-0">
           <div className="mr-4">
-            <Image src="/ZKLiquid.svg" width={80} height={80} alt="Logo" />
+            <Image src="/noya.svg" width={80} height={80} alt="Logo" />
           </div>
           <div>
             <h1 className="text-white">Native Omnichain Yield Aggregator.</h1>

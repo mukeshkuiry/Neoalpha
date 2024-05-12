@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-      <div className="px-10 md:px-32 lg:px-52">
+      <div className="px-10 md:px-16 lg:px-32">
         <Hero />
         <About />
         <Benifits />
