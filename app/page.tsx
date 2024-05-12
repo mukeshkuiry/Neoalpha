@@ -8,7 +8,7 @@ import Protocols from "@/components/Protocols";
 import Strategy from "@/components/Strategy";
 
 export default async function Home() {
-  await new Promise((resolve) => setTimeout(resolve, 4000));
+  await new Promise((resolve) => setTimeout(resolve, 2000));
   return (
     <div>
       <Navbar />
