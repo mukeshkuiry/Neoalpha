@@ -27,7 +27,7 @@ export default function About() {
         </div> */}
         <div className="mb-6">
           <Image
-            src="/asses.png"
+            src="/strat.png"
             alt="Assets image"
             height={200}
             width={700}
