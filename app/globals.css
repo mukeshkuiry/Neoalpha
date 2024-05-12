@@ -35,7 +35,7 @@ body {
 .gradient-bg {
 	background: linear-gradient(-45deg, #24069e, #790808, #6b09db, #11a503);
 	animation: gradient 2s ease infinite;
-  background-size: 400px 400px;
+  background-size: 600px 600px;
 }
 
 @keyframes gradient {
@@ -85,19 +85,19 @@ body {
 }
 
 .level-1 {
-  background-color: #ffcccc; /* Light Red */
+  background-color: #fcc2c2; /* Light Red */
 }
 
 .level-2 {
-  background-color: #ffffcc; /* Light Yellow */
+  background-color: #9af891; /* Light Yellow */
 }
 
 .level-3 {
-  background-color: #ccffcc; /* Light Green */
+  background-color: #d1d0f7; /* Light Green */
 }
 
 .level-4 {
-  background-color: #ccccff; /* Light Blue */
+  background-color: #ffccfb; /* Light Blue */
 }
 
 @keyframes slide-in {

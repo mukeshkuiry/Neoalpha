@@ -2,16 +2,12 @@
 // components/ProfileDashboard.tsx
 
 import React, { useState, useEffect } from "react";
-import { Card, message } from "antd";
-import { CopyOutlined } from "@ant-design/icons";
-import {
-  LineChart,
-  Line,
-  Tooltip as RechartsTooltip,
-  ResponsiveContainer,
-} from "recharts";
+import { Card, Tag, message } from "antd";
+import { ArrowUpOutlined, ClockCircleFilled, CopyOutlined } from "@ant-design/icons";
+import { ResponsiveContainer } from "recharts";
 import ReferralHistory from "./ReferralHistory";
 import Loadbar from "./Loadbar";
+import GrowthChart from "./ProfileChart";
 
 const ProfileDashboard: React.FC = () => {
   // Sample user data, replace with actual data from your backend
@@ -40,6 +36,8 @@ const ProfileDashboard: React.FC = () => {
   const data = Array.from({ length: 50 }, (_, index) => ({
     name: `Day ${index + 1}`,
     exp: getExperiencePoints(index + 1), // Get experience points for each day
+    point: getExperiencePoints(index + 1),
+    aqi: getExperiencePoints(index + 1),
   }));
 
   const handleCopyReferralCode = () => {
@@ -48,7 +46,7 @@ const ProfileDashboard: React.FC = () => {
   };
 
   return (
-    <div className="p-4 lg:px-60">
+    <div className="p-4 lg:px-48">
       <h1 className="text-2xl font-bold mb-4">Referral Dashboard</h1>
       {/* Referrl code card with click to copy, share buttons */}
       <div className="bg-gray-800 p-2 md:p-6 rounded-lg shadow-md text-white">
@@ -84,7 +82,10 @@ const ProfileDashboard: React.FC = () => {
           </div>
           <div className="bg-purple-200 p-4 md:p-6 rounded-xl">
             <p className="text-xl text-gray-600">Referrals</p>
-            <p className="font-bold text-6xl mt-2">10</p>
+            <p className="font-bold text-6xl mt-2 flex justify-center items-center">
+              10
+              <ArrowUpOutlined className="text-green-500" />
+            </p>
           </div>
           <div className="bg-gray-200 p-4 md:p-6 rounded-xl">
             <p className="text-xl text-gray-600">Global Rank</p>
@@ -99,7 +100,17 @@ const ProfileDashboard: React.FC = () => {
           <Loadbar />
         </div>
       </div>
-      <Card title="LQAI Token" className="mt-8">
+      <Card
+        title="LQAI Token"
+        // right action text
+        extra={
+          <div className="flex items-center space-x-4">
+            <span className="text-gray-600">Next claim available in</span>
+            <Tag color="purple" icon={<ClockCircleFilled/>}>23 Hour</Tag>
+          </div>
+        }
+        className="mt-8"
+      >
         <ul className="list">
           <li className="list-item level-1">
             <h2>Level 1 (1-5 Referrals)</h2>
@@ -108,6 +119,7 @@ const ProfileDashboard: React.FC = () => {
           <li className="list-item level-2">
             <h2>Level 2 (6-10 Referrals)</h2>
             <p>Increased base amount + 1.2x multiplier, 1% yield share</p>
+            <Tag color="green">Active</Tag>
           </li>
           <li className="list-item level-3">
             <h2>Level 3 (11-20 Referrals)</h2>
@@ -127,16 +139,7 @@ const ProfileDashboard: React.FC = () => {
         className="bg-white rounded-lg shadow-md mt-4 animate-fade-out"
       >
         <ResponsiveContainer width="100%" height={300}>
-          <LineChart data={data}>
-            <RechartsTooltip />
-            <Line
-              type="monotone"
-              dataKey="exp"
-              stroke="#722ed1"
-              activeDot={{ r: 8 }}
-              fill="#32d2d2"
-            />
-          </LineChart>
+          <GrowthChart />
         </ResponsiveContainer>
       </Card>
       <Card

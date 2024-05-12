@@ -44,7 +44,7 @@ export default function FAQ() {
   ];
 
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div className="flex flex-col justify-center items-center mt-20">
       <h1 className="text-3xl font-bold mb-4">FAQ</h1>
       <p className="text-lg mb-4">Frequently Asked Questions</p>
       <div className="w-full lg:w-2/3">

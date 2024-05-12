@@ -26,7 +26,17 @@ const ReferralHistory: React.FC = () => {
         <Tag color="blue">{tokensEarned} Tokens</Tag>
       ),
     },
+    {
+      title: "Action",
+      key: "action",
+      render: () => (
+        <Tag color="green" key="action" className="cursor-pointer">
+          Claim
+        </Tag>
+      ),
+    },
   ];
+    
 
   const referralHistoryData = [
     { key: "1", date: "2024-05-01", expEarned: 50, tokensEarned: 10 },

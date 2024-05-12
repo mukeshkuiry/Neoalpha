@@ -123,7 +123,7 @@ const Indexes: React.FC = () => {
   return (
     <div className="mt-20">
       <h1 className="text-3xl text-center mb-8">All Indexes</h1>
-      <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
         {data.map((index, indexKey) => (
           <IndexCard key={indexKey} index={index} />
         ))}
