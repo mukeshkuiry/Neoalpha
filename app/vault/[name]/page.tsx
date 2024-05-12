@@ -1,4 +1,5 @@
 "use client";
+import { useModal } from "@/app/ModalProvider";
 import About from "@/components/Vault/About";
 import BoostedChart from "@/components/Vault/Chart";
 import {
@@ -20,6 +21,8 @@ type Props = {
 
 /* eslint-disable @next/next/no-img-element */
 const Vault: React.FC<Props> = ({ params }) => {
+
+  const {showModal} = useModal();
   // get name from the props query
 
   const { name } = params;
@@ -47,31 +50,24 @@ const Vault: React.FC<Props> = ({ params }) => {
           </p>
         </div>
         <div className="flex jc items-center gap-4">
-          <Tooltip title="Coming soon">
-            <div className="flex items-center bg-gray-400 hover:bg-gray-500 hover:scale-105 transition-all cursor-pointer h-fit text-black text-sm pr-1.5 p-1 pl-3 rounded-full">
+            <div onClick={showModal} className="flex items-center bg-gray-400 hover:bg-gray-500 hover:scale-105 transition-all cursor-pointer h-fit text-black text-sm pr-1.5 p-1 pl-3 rounded-full">
               <p>Contracts </p>{" "}
               <p className="bg-white text-black p-1 px-2 ml-2 rounded-full rotate-45 hover:rotate-90 transition-all">
                 <ArrowUpOutlined />
               </p>
             </div>
-          </Tooltip>
-
-          <Tooltip title="Coming soon">
-            <div className="flex items-center bg-gray-400 hover:bg-gray-500 hover:scale-105 transition-all cursor-pointer h-fit text-black text-sm pr-1.5 p-1 pl-3 rounded-full">
+            <div onClick={showModal} className="flex items-center bg-gray-400 hover:bg-gray-500 hover:scale-105 transition-all cursor-pointer h-fit text-black text-sm pr-1.5 p-1 pl-3 rounded-full">
               <p>Deposite </p>{" "}
               <p className="bg-white text-black p-1 px-2 ml-2 rounded-full transition-all">
                 <TransactionOutlined />
               </p>
             </div>
-          </Tooltip>
-          <Tooltip title="Coming soon">
-            <div className="flex items-center bg-gray-400 hover:bg-gray-500 hover:scale-105 transition-all cursor-pointer h-fit text-black text-sm pr-1.5 p-1 pl-3 rounded-full">
+            <div onClick={showModal} className="flex items-center bg-gray-400 hover:bg-gray-500 hover:scale-105 transition-all cursor-pointer h-fit text-black text-sm pr-1.5 p-1 pl-3 rounded-full">
               <p>Stake </p>{" "}
               <p className="bg-white text-black p-1 px-2 ml-2 rounded-full transition-all">
                 <WalletOutlined />
               </p>
             </div>
-          </Tooltip>
         </div>
       </div>
       <div className="p-6 rounded-2xl bg-white flex justify-between items-center mt-8">
@@ -87,7 +83,6 @@ const Vault: React.FC<Props> = ({ params }) => {
             <h1 className="text-2xl mt-1 text-green-500">$97.08</h1>
           </div>
         </div>
-        <Tooltip title="Coming soon">
           <Segmented
             size="small"
             options={[
@@ -101,9 +96,8 @@ const Vault: React.FC<Props> = ({ params }) => {
               },
             ]}
             value="dollar"
-            onChange={() => {}}
+            onChange={showModal}
           />
-        </Tooltip>
       </div>
       <div className="flex justify-between items-center mt-8">
         <div>
@@ -116,12 +110,10 @@ const Vault: React.FC<Props> = ({ params }) => {
           </p>
         </div>
 
-        <Tooltip title="Coming soon">
-          <div className="p-1.5 px-4 rounded-full bg-[#cececea2] flex justify-center items-center gap-2">
+          <div onClick={showModal} className="p-1.5 px-4 rounded-full bg-[#cececea2] flex justify-center items-center gap-2">
             <CalculatorFilled />
             <p className="text-gray-700">Open Calculator</p>
           </div>
-        </Tooltip>
       </div>
 
       <BoostedChart />

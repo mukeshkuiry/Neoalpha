@@ -1,8 +1,11 @@
+"use client"
 import React from "react";
-import { Table, Tag, Tooltip } from "antd";
+import { Table, Tag } from "antd";
 import moment from "moment";
+import { useModal } from "@/app/ModalProvider";
 
 const ReferralHistory: React.FC = () => {
+  const {showModal} = useModal();
   const columns = [
     {
       title: "Date",
@@ -30,11 +33,9 @@ const ReferralHistory: React.FC = () => {
       title: "Action",
       key: "action",
       render: () => (
-        <Tooltip title="Coming soon">
-          <Tag color="green" key="action" className="cursor-pointer">
+          <Tag onClick={showModal} color="green" key="action" className="cursor-pointer">
             Claim
           </Tag>
-        </Tooltip>
       ),
     },
   ];

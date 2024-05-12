@@ -1,7 +1,8 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
-import { Segmented, Switch, Tooltip } from "antd";
+import { Segmented, Switch } from "antd";
 import Chart from "chart.js/auto";
+import { useModal } from "@/app/ModalProvider";
 
 const BoostedChart: React.FC = () => {
   const [aiEnabled, setAiEnabled] = useState<boolean>(false);
@@ -9,7 +10,7 @@ const BoostedChart: React.FC = () => {
   const [labels, setLabels] = useState<string[]>([]);
   const chartRef = useRef<HTMLCanvasElement>(null);
   const chartInstanceRef = useRef<Chart>();
-
+  const {showModal} = useModal();
   useEffect(() => {
     // Function to generate random data and labels
     const generateRandomData = () => {
@@ -118,7 +119,6 @@ const BoostedChart: React.FC = () => {
           <Switch id="aiToggle" checked={aiEnabled} onChange={toggleAi} />
         </div>
         <div className="flex gap-2">
-          <Tooltip title="Coming soon">
           <Segmented
             size="small"
             options={[
@@ -128,10 +128,8 @@ const BoostedChart: React.FC = () => {
               { label: "1Y", value: "1Y" },
             ]}
             value="1M"
-            onChange={() => {}}
+            onChange={showModal}
           />
-          </Tooltip>
-          <Tooltip title="Coming soon">
           <Segmented
             size="small"
             options={[
@@ -140,9 +138,8 @@ const BoostedChart: React.FC = () => {
               { label: "Price", value: "Price" },
             ]}
             value="APY"
-            onChange={() => {}}
+            onChange={showModal}
           />
-          </Tooltip>
         </div>
       </div>
       <div className="relative">

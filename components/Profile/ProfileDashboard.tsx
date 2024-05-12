@@ -12,8 +12,10 @@ import { ResponsiveContainer } from "recharts";
 import ReferralHistory from "./ReferralHistory";
 import Loadbar from "./Loadbar";
 import GrowthChart from "./ProfileChart";
+import { useModal } from "@/app/ModalProvider";
 
 const ProfileDashboard: React.FC = () => {
+  const {showModal} = useModal();
   // Sample user data, replace with actual data from your backend
   const [user, setUser] = useState({
     name: "John Doe",
@@ -123,11 +125,9 @@ const ProfileDashboard: React.FC = () => {
         extra={
           <div className="flex items-center space-x-4">
             <span className="text-gray-600">Next claim available in</span>
-            <Tooltip title="Coming soon">
-              <Tag color="purple" icon={<ClockCircleFilled />}>
+              <Tag onClick={showModal} color="purple" icon={<ClockCircleFilled />}>
                 23 Hour
               </Tag>
-            </Tooltip>
           </div>
         }
         className="mt-8"
