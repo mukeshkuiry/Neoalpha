@@ -89,7 +89,7 @@ const ProfileDashboard: React.FC = () => {
             <p className="text-xl text-gray-600">Global Rank</p>
             <p className="font-bold text-6xl mt-2">
               {" "}
-              #{user.rank}/<span className="text-4xl text-gray-600">240</span>
+              #{user.rank}
             </p>
           </div>
         </div>
