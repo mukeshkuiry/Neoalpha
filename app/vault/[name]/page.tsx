@@ -4,11 +4,13 @@ import BoostedChart from "@/components/Vault/Chart";
 import {
   ArrowUpOutlined,
   CalculatorFilled,
+  DollarCircleFilled,
   TransactionOutlined,
   WalletOutlined,
 } from "@ant-design/icons";
-import { Tooltip } from "antd";
+import { Segmented, Tooltip } from "antd";
 import Image from "next/image";
+import { FaNetworkWired } from "react-icons/fa";
 
 type Props = {
   params: {
@@ -85,14 +87,23 @@ const Vault: React.FC<Props> = ({ params }) => {
             <h1 className="text-2xl mt-1 text-green-500">$97.08</h1>
           </div>
         </div>
-        <div className="bg-gray-300 rounded-xl p-1 flex justify-center items-center gap-1">
-          <p className="p-0.5 px-2 cursor-pointer bg-white rounded-full text-[12px]">
-            $
-          </p>
-          <p className="p-1 cursor-pointer px-1 bg-white rounded-full text-[10px]">
-            🌐
-          </p>
-        </div>
+        <Tooltip title="Coming soon">
+        <Segmented
+          size="small"
+          options={[
+            {
+              icon: <DollarCircleFilled />,
+              value: "dollar",
+            },
+            {
+              icon: <FaNetworkWired />,
+              value: "network",
+            },
+          ]}
+          value="dollar"
+          onChange={() => {}}
+        />
+        </Tooltip>
       </div>
       <div className="flex justify-between items-center mt-8">
         <div>

@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
-import { Segmented, Switch } from "antd";
+import { Segmented, Switch, Tooltip } from "antd";
 import Chart from "chart.js/auto";
 
 const BoostedChart: React.FC = () => {
@@ -118,6 +118,7 @@ const BoostedChart: React.FC = () => {
           <Switch id="aiToggle" checked={aiEnabled} onChange={toggleAi} />
         </div>
         <div className="flex gap-2">
+          <Tooltip title="Coming soon">
           <Segmented
             size="small"
             options={[
@@ -129,6 +130,8 @@ const BoostedChart: React.FC = () => {
             value="1M"
             onChange={() => {}}
           />
+          </Tooltip>
+          <Tooltip title="Coming soon">
           <Segmented
             size="small"
             options={[
@@ -139,6 +142,7 @@ const BoostedChart: React.FC = () => {
             value="APY"
             onChange={() => {}}
           />
+          </Tooltip>
         </div>
       </div>
       <div className="relative">

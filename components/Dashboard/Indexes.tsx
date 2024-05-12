@@ -3,6 +3,7 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 import { FiUsers } from "react-icons/fi";
+import { Tooltip } from "antd";
 
 interface Index {
   type: string;
@@ -55,9 +56,11 @@ const IndexCard: React.FC<{ index: Index }> = ({ index }) => {
         {index.valueTvl} <br />
         <span className="text-[12px] text-gray-400">TVL</span>
       </div>
+      <Tooltip title="Coming soon">
       <p className="mt-4 text-gray-400 underline underline-offset-4 cursor-pointer hover:text-gray-300 transition-all">
         Index Update
       </p>
+      </Tooltip>
     </div>
   );
 };

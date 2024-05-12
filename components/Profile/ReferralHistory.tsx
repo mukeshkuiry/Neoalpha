@@ -1,5 +1,5 @@
 import React from "react";
-import { Table, Tag } from "antd";
+import { Table, Tag, Tooltip } from "antd";
 import moment from "moment";
 
 const ReferralHistory: React.FC = () => {
@@ -8,15 +8,15 @@ const ReferralHistory: React.FC = () => {
       title: "Date",
       dataIndex: "date",
       key: "date",
-      render: (date: string) => <span>{moment(date).format("YYYY-MM-DD")}</span>,
+      render: (date: string) => (
+        <span>{moment(date).format("YYYY-MM-DD")}</span>
+      ),
     },
     {
       title: "Exp Earned",
       dataIndex: "expEarned",
       key: "expEarned",
-      render: (expEarned: number) => (
-        <Tag color="purple">{expEarned} EXP</Tag>
-      ),
+      render: (expEarned: number) => <Tag color="purple">{expEarned} EXP</Tag>,
     },
     {
       title: "Tokens Earned",
@@ -30,13 +30,14 @@ const ReferralHistory: React.FC = () => {
       title: "Action",
       key: "action",
       render: () => (
-        <Tag color="green" key="action" className="cursor-pointer">
-          Claim
-        </Tag>
+        <Tooltip title="Coming soon">
+          <Tag color="green" key="action" className="cursor-pointer">
+            Claim
+          </Tag>
+        </Tooltip>
       ),
     },
   ];
-    
 
   const referralHistoryData = [
     { key: "1", date: "2024-05-01", expEarned: 50, tokensEarned: 10 },
