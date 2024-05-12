@@ -3,6 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { MenuOutlined } from "@ant-design/icons";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,7 +14,14 @@ export default function Navbar() {
 
   return (
     <div className="flex justify-between items-center py-4 px-6 text-white">
-      <h1 className="text-3xl font-bold">Neoalpha</h1>
+      <Image
+        onClick={() => router.push("/")}
+        src={"/logo.png"}
+        width={200}
+        height={100}
+        className="cursor-pointer"
+        alt="Logo"
+      />
       <div className="flex items-center mt-4 lg:mt-0 lg:ml-4">
         <div className="hidden lg:flex flex-col lg:flex-row lg:items-center lg:space-x-4">
           <Link href="/" passHref>

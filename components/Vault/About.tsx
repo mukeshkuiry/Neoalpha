@@ -5,14 +5,14 @@ export default function About() {
     <div className="p-6 rounded-xl bg-white mt-8">
       <h1 className="text-2xl mb-2">About</h1>
       <p className="text-gray-700 mb-6">
-        Locus Yield ETH is a basket of yield-bearing strategies involving ETH
+        ZKLiquid Yield ETH is a basket of yield-bearing strategies involving ETH
         and its liquid staking derivatives. The index aims to tap into different
         sectors of DeFi to provide users with the best risk-adjusted returns.
       </p>
       <div>
         <h1 className="text-2xl mb-2">Why invest?</h1>
         <p className="text-gray-700 mb-6">
-          Locus Yield ETH streamlines the investment process by compounding
+          ZKLiquid Yield ETH streamlines the investment process by compounding
           rewards and updating underlying strategies depending on the state of
           the market. The index maintains a moderate risk profile and is best
           suited for investors looking to earn competitive returns on their ETH

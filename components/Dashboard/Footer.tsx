@@ -1,8 +1,8 @@
 import {
-  DiscordFilled,
-  GithubFilled,
-  TwitterCircleFilled,
-  YoutubeFilled,
+    DiscordFilled,
+    GithubFilled,
+    TwitterCircleFilled,
+    YoutubeFilled,
 } from "@ant-design/icons";
 import Link from "next/link";
 import React from "react";
@@ -27,10 +27,10 @@ const Footer: React.FC = () => {
           </Link>
         </div>
         <Link
-          href="mailto:support@locus.finance"
+          href="mailto:support@ZKLiquid.finance"
           className="hover:text-gray-400 text-gray-700"
         >
-          support@locus.finance
+          support@ZKLiquid.finance
         </Link>
         <div className="flex flex-wrap justify-center items-center gap-6 text-white">
           <Link

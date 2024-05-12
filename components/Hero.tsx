@@ -12,7 +12,7 @@ export default function Hero() {
           Trustless Omnichain AI Agents
         </h1>
         <p className="my-5">
-          NOYA&apos;s AI Agents direct omnichain liquidity trustlessly using
+          ZKLiquid&apos;s AI Agents direct omnichain liquidity trustlessly using
           ZKML.
           <br />
           These agents execute multiple intents like yield aggregation,

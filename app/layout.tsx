@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Neoalpha",
-  description: "Neoalpha- the perfect finance dapp",
+  title: "zkliquid.ai",
+  description: "zkliquid.ai- the perfect finance dapp",
   keywords: ["finance", "dapp", "blockchain"],
   authors: {
     name: "Mukesh",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   category: "dapp",
   twitter: {
     card: "summary",
-    site: "@neoalpha",
+    site: "@zkliquid.ai",
     creator: "@mukeshkuiry7",
   },
   // Add more metadata properties here

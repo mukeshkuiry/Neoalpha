@@ -1,6 +1,12 @@
+"use client";
 import About from "@/components/Vault/About";
 import BoostedChart from "@/components/Vault/Chart";
-import { ArrowUpOutlined } from "@ant-design/icons";
+import {
+  ArrowUpOutlined,
+  TransactionOutlined,
+  WalletOutlined,
+} from "@ant-design/icons";
+import { FloatButton } from "antd";
 import Image from "next/image";
 
 type Props = {
@@ -71,7 +77,7 @@ const Vault: React.FC<Props> = ({ params }) => {
       <div className="flex justify-between items-center mt-8">
         <div>
           <h1 className="text-lg">
-            Calculate your potential performance with Locus Yield ETH
+            Calculate your potential performance with ZKLiquid Yield ETH
           </h1>
           <p className="text-[13px] text-gray-600">
             Enter deposit amount and investment period to calculate your
@@ -86,6 +92,21 @@ const Vault: React.FC<Props> = ({ params }) => {
       </div>
       <BoostedChart />
       <About />
+      <FloatButton
+        className="fixed bottom-10 right-10"
+        icon={<WalletOutlined />}
+        onClick={() => console.log("deposit")}
+      >
+        Deposit
+      </FloatButton>
+      <FloatButton
+        className="fixed bottom-20 right-10"
+        icon={<TransactionOutlined />}
+        onClick={() => console.log("contract")}
+      >
+        Contract
+      </FloatButton>
+      
     </div>
   );
 };

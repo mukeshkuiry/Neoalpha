@@ -1,12 +1,11 @@
 import { LinkOutlined } from "@ant-design/icons";
-import { Button } from "antd";
 import Image from "next/image";
 
 export default function Strategy() {
   return (
     <div className="text-center mt-20">
       <h1 className="text-2xl font-bold m-8 ">
-        Unleash exceptional returns with NOYA&apos;s game-changing agent-first approach
+        Unleash exceptional returns with ZKLiquid&apos;s game-changing agent-first approach
       </h1>
       <div className="flex flex-col lg:flex-row justify-center items-center mb-8 p-8">
         <div className="w-full lg:w-1/2 mb-4 lg:mb-0 lg:mr-4">

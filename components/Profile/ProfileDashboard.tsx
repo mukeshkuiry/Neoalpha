@@ -2,21 +2,17 @@
 // components/ProfileDashboard.tsx
 
 import React, { useState, useEffect } from "react";
-import { Card, Progress, Button, Tooltip, message } from "antd";
-import { CopyOutlined, GlobalOutlined } from "@ant-design/icons";
+import { Card, Button, Tooltip, message } from "antd";
+import { CopyOutlined } from "@ant-design/icons";
 import {
   LineChart,
   Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
   Tooltip as RechartsTooltip,
-  Legend,
   ResponsiveContainer,
 } from "recharts";
-import { GiWantedReward } from "react-icons/gi";
 import LeaderboardSection from "./LeaderboardCard";
 import ReferralHistory from "./ReferralHistory";
+import Loadbar from "./Loadbar";
 
 const ProfileDashboard: React.FC = () => {
   // Sample user data, replace with actual data from your backend
@@ -32,7 +28,7 @@ const ProfileDashboard: React.FC = () => {
   // Simulated increase in experience every se
   useEffect(() => {
     const interval = setInterval(() => {
-      setUser((prev) => ({ ...prev, exp: prev.exp + prev.referrals/2 }));
+      setUser((prev) => ({ ...prev, exp: prev.exp + prev.referrals / 2 }));
     }, 1000);
     return () => clearInterval(interval);
   }, []);
@@ -56,114 +52,94 @@ const ProfileDashboard: React.FC = () => {
     <div className="p-4 lg:px-60">
       <h1 className="text-2xl font-bold mb-4">Referral Dashboard</h1>
       {/* Referrl code card with click to copy, share buttons */}
-      <Card
-        title="Referral Code"
-        className="bg-white rounded-lg shadow-md mt-4 animate-fade-out"
-      >
-        <div className="flex items-center justify-between">
-          <span className="text-lg">{"6HE8T5W"}</span>
-          <Tooltip title="Copy Referral Code">
-            <Button
-              type="primary"
-              shape="circle"
-              icon={<CopyOutlined />}
+      <div className="bg-gray-800 p-6 rounded-lg shadow-md text-white">
+        <h2 className="text-2xl font-bold mb-4">Your Referral Code</h2>
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center space-x-4">
+            <div className="text-4xl font-semibold text-purple-500">R4K86ER</div>
+            <button
               onClick={handleCopyReferralCode}
-            />
-          </Tooltip>
+              className="flex items-center justify-center bg-purple-500 text-white rounded-xl p-2 hover:bg-purple-600 focus:outline-none focus:ring focus:ring-purple-300"
+            >
+              <CopyOutlined />
+              <span className="ml-2">Copy</span>
+            </button>
+          </div>
+          <div className="text-lg font-semibold text-yellow-400">Level 3</div>
         </div>
-        <div className="flex flex-col lg:flex-row ` items-center justify-between mt-4">
-          <span className="text-lg">Share Referral Code</span>
-          <div className="flex gap-2">
-            <Button type="primary">Facebook</Button>
-            <Button type="primary">Twitter</Button>
-            <Button type="primary">LinkedIn</Button>
+        <div className="relative w-full bg-gray-600 h-5 rounded-full">
+          <div
+            className="absolute top-0 left-0 bg-yellow-400 h-full rounded-full"
+            style={{ width: "60%" }} // Assuming 60% progress
+          ></div>
+        </div>
+      </div>
+
+      <div className="flex mt-6 gap-6">
+        <div className="bg-white p-6 rounded-xl flex justify-center items-center gap-4 w-fit">
+          <div className="bg-yellow-200 p-6 rounded-xl">
+            <p className="text-xl text-gray-600">Tokens</p>
+            <p className="font-bold text-6xl mt-2">100</p>
+          </div>
+          <div className="bg-purple-200 p-6 rounded-xl">
+            <p className="text-xl text-gray-600">Referrals</p>
+            <p className="font-bold text-6xl mt-2">10</p>
+          </div>
+          <div className="bg-gray-200 p-6 rounded-xl">
+            <p className="text-xl text-gray-600">Global Rank</p>
+            <p className="font-bold text-6xl mt-2">
+              {" "}
+              #{user.rank}/<span className="text-4xl text-gray-600">240</span>
+            </p>
           </div>
         </div>
+        <div className="w-full gradient-bg rounded-xl p-6">
+          <h1 className="text-white font-bold font-2xl">EXP</h1>
+          <p className="text-6xl font-bold text-yellow-400 mt-2">
+            {(user.exp + 4.73) * 3}
+          </p>
+          <Loadbar />
+        </div>
+      </div>
+      <Card title="LQAI Token" className="mt-8">
+        <ul className="list">
+          <li className="list-item level-1">
+            <h2>Level 1 (1-5 Referrals)</h2>
+            <p>Base amount of LQAI (1x multiplier, no yield share)</p>
+          </li>
+          <li className="list-item level-2">
+            <h2>Level 2 (6-10 Referrals)</h2>
+            <p>Increased base amount + 1.2x multiplier, 1% yield share</p>
+          </li>
+          <li className="list-item level-3">
+            <h2>Level 3 (11-20 Referrals)</h2>
+            <p>
+              Further increased base amount + 1.5x multiplier, 2% yield share
+            </p>
+          </li>
+          <li className="list-item level-4">
+            <h2>Level 4 (21+ Referrals)</h2>
+            <p>Highest base amount + 2x multiplier, 3% yield share</p>
+          </li>
+        </ul>
       </Card>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-4">
-        <Card
-          title="Global Rank"
-          className="bg-white rounded-lg shadow-md mt-4 animate-fade-out"
-        >
-          <div className="flex items-center justify-between">
-            <span className="text-xl">
-              #{user.rank}/<span className="text-sm text-gray-600">240</span>
-            </span>
-            <GlobalOutlined style={{ fontSize: "24px", color: "#722ed1" }} />
-          </div>
-        </Card>
-        <Card
-          title="Tokens"
-          className="bg-white rounded-lg shadow-md mt-4 animate-fade-out"
-        >
-          <div className="flex items-center justify-between">
-            <span className="text-lg">{user.tokens}</span>
-            <GiWantedReward style={{ fontSize: "24px", color: "#722ed1" }} />
-          </div>
-        </Card>
-        <Card
-          title="Referrals"
-          className="bg-white rounded-lg shadow-md mt-4 animate-fade-out"
-        >
-          <div className="flex items-center justify-between">
-            <span className="text-lg">{user.referrals}</span>
-            <GiWantedReward style={{ fontSize: "24px", color: "#722ed1" }} />
-          </div>
-        </Card>
-      </div>
-      <Card
-        title="Experience"
-        className="bg-white rounded-lg shadow-md animate-fade-out"
-      >
-        <div className="flex items-center justify-between">
-          <span className="text-lg">Experience Points</span>
-          <span className="text-lg text-gray-600">{user.exp}</span>
-        </div>
-        <Progress
-          percent={(user.exp / 10000) * 100} // Assuming 10,000 exp is the maximum
-          showInfo={false}
-          strokeColor={{
-            "0%": "#108ee9",
-            "100%": "#87d068",
-          }}
-        />
-      </Card>
       <Card
         title="Experience Growth Chart"
         className="bg-white rounded-lg shadow-md mt-4 animate-fade-out"
       >
         <ResponsiveContainer width="100%" height={300}>
           <LineChart data={data}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
-            <YAxis />
             <RechartsTooltip />
-            <Legend />
             <Line
               type="monotone"
               dataKey="exp"
               stroke="#722ed1"
               activeDot={{ r: 8 }}
+              fill="#32d2d2"
             />
           </LineChart>
         </ResponsiveContainer>
-      </Card>
-      <Card
-        title="Referral Code"
-        className="bg-white rounded-lg shadow-md mt-4 animate-fade-out"
-      >
-        <div className="flex items-center justify-between">
-          <span className="text-lg">{"6HE8T5W"}</span>
-          <Tooltip title="Copy Referral Code">
-            <Button
-              type="primary"
-              shape="circle"
-              icon={<CopyOutlined />}
-              onClick={handleCopyReferralCode}
-            />
-          </Tooltip>
-        </div>
       </Card>
       <Card
         title="Referral History"
@@ -171,20 +147,6 @@ const ProfileDashboard: React.FC = () => {
       >
         {/* Render referral history here */}
         <ReferralHistory />
-      </Card>
-      <Card
-        title="Leaderboard"
-        className="bg-white rounded-lg shadow-md mt-4 animate-fade-out"
-      >
-        {/* Render leaderboard here */}
-        <LeaderboardSection
-          leaderboardData={[
-            { key: "1", username: "John Doe", rank: 1, experience: 10000 },
-            { key: "2", username: "Jane Doe", rank: 2, experience: 9000 },
-            { key: "3", username: "Alice", rank: 3, experience: 8000 },
-          ]}
-          userRank={user.rank}
-        />
       </Card>
     </div>
   );

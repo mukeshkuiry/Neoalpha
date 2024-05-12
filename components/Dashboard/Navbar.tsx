@@ -1,10 +1,10 @@
-"use client"
+"use client";
 import { ArrowUpOutlined, UserOutlined } from "@ant-design/icons";
 import { useEffect, useState } from "react";
 import { Web3 } from "web3";
 import { Popover, Button } from "antd";
 import { useRouter } from "next/navigation";
-
+import Image from "next/image";
 export default function Navbar() {
   const [connectedAccount, setConnectedAccount] = useState("null");
 
@@ -31,12 +31,14 @@ export default function Navbar() {
 
   return (
     <div className="flex flex-col lg:flex-row justify-between items-center py-4 px-6 text-black">
-      <h1
+      <Image
         onClick={() => router.push("/app")}
-        className="text-3xl font-bold cursor-pointer mb-4 lg:mb-0 lg:mr-8"
-      >
-        Neoalpha
-      </h1>
+        className="cursor-pointer"
+        src={"/logo.png"}
+        width={200}
+        height={100}
+        alt="Logo"
+      />
 
       <div className="flex justify-between items-center w-full lg:w-auto">
         <div

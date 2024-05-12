@@ -66,7 +66,7 @@ const Indexes: React.FC = () => {
   const data: Index[] = [
     {
       type: "ETH notional",
-      name: "Locus Yield ETH",
+      name: "ZKLiquid Yield ETH",
       moto: "Set and forget",
       tags: ["LSDfi", "Low risk"],
       weeklyApi: "7.11%",
@@ -93,7 +93,7 @@ const Indexes: React.FC = () => {
     },
     {
       type: "USDC.e notional",
-      name: "Locus Yield USD",
+      name: "ZKLiquid Yield USD",
       moto: "Omnichain",
       tags: ["Market-neutral", "Low risk"],
       weeklyApi: "48.21%",

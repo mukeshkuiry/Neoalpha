@@ -6,7 +6,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
             <h2 className="text-lg font-bold">Contact Us</h2>
-            <p className="mt-2">Email: contact@noya.com</p>
+            <p className="mt-2">Email: contact@ZKLiquid.com</p>
             <p>Phone: +1 123 456 7890</p>
           </div>
           <nav className="flex flex-wrap justify-center md:justify-end">
@@ -18,7 +18,7 @@ export default function Footer() {
           </nav>
         </div>
         <div className="mt-4 text-center md:text-right">
-          <p>&copy; 2024 NOYA. All rights reserved.</p>
+          <p>&copy; 2024 ZKLiquid. All rights reserved.</p>
         </div>
       </div>
     </footer>

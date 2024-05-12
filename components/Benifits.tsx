@@ -12,7 +12,7 @@ export default function Benifits() {
             AI Agents you can trust
           </h1>
           <p className="text-center lg:text-left">
-            NOYA&apos;s ZKML implementation enables on-chain proving of private
+            ZKLiquid&apos;s ZKML implementation enables on-chain proving of private
             & predictive AI models which enables trustless & verifiable strategy
             execution.
           </p>
@@ -36,7 +36,7 @@ export default function Benifits() {
             The lowest fees possible through DEX & Bridge aggregators.
           </h1>
           <p className="text-center lg:text-left">
-            NOYA elevates the DeFi experience by minimizing slippage and fees
+            ZKLiquid elevates the DeFi experience by minimizing slippage and fees
             through the seamless integration of bridge and DEX aggregators.
           </p>
         </div>

@@ -33,19 +33,80 @@ body {
 }
 
 .gradient-bg {
-	background: linear-gradient(-45deg, #02000a, #000000, #0b0018, #000000);
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
+	background: linear-gradient(-45deg, #24069e, #790808, #6b09db, #11a503);
+	animation: gradient 2s ease infinite;
+  background-size: 400px 400px;
 }
 
 @keyframes gradient {
 	0% {
-		background-position: 0% 50%;
+		background-position: 0% 90%;
 	}
 	50% {
-		background-position: 100% 50%;
+		background-position: 90% 10%;
 	}
 	100% {
-		background-position: 0% 50%;
+		background-position: 0% 100%;
 	}
+}
+
+.loading-bar {
+  height: 40px;
+  width: 10px;
+  margin-right: 1px;
+  margin-top: 10px;
+  border-radius: 100px;
+  animation: loading 1.5s infinite ease-in-out;
+}
+
+@keyframes loading {
+  0% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.list-item {
+  padding: 20px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  animation: slide-in 0.5s ease-in-out;
+}
+
+.level-1 {
+  background-color: #ffcccc; /* Light Red */
+}
+
+.level-2 {
+  background-color: #ffffcc; /* Light Yellow */
+}
+
+.level-3 {
+  background-color: #ccffcc; /* Light Green */
+}
+
+.level-4 {
+  background-color: #ccccff; /* Light Blue */
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
