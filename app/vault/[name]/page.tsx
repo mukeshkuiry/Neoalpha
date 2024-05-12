@@ -25,12 +25,12 @@ const Vault: React.FC<Props> = ({ params }) => {
   const _name = name.replaceAll("%20", " ");
 
   return (
-    <div className="px-72 pb-10">
+    <div className="px-2 md:px-48 lg:px-72 pb-10">
       <div className="flex items-center gap-4 mt-8">
         <img src="/eth.png" className="h-10 w-10" alt="logo" />
         <h1 className="text-4xl">{_name}</h1>
       </div>
-      <div className="flex mt-5  items-center justify-between text-sm">
+      <div className="flex flex-col lg:flex-row mt-5 gap-4  items-center justify-between text-sm">
         <div className="flex gap-4 justify-center items-center">
           <div className="p-1 px-3 rounded-full bg-white flex justify-center items-center gap-2">
             <Image height={20} width={20} src="/image.png" alt="index logo" />

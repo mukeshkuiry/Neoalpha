@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState, useEffect, useRef } from "react";
 import { Segmented, Switch } from "antd";
 import Chart from "chart.js/auto";
@@ -20,8 +20,10 @@ const BoostedChart: React.FC = () => {
 
       for (let i = 0; i < 30; i++) {
         randomLabels.push(currentDate.toLocaleDateString());
-        const fluctuation = Math.random() * 1000 - 500; // Random fluctuation between -500 and 500
-        randomData.push(5000 + fluctuation); // Starting value 5000
+        const fluctuation = Math.random() * 100 - 70; // Random fluctuation between -70 and 30
+        const x = i; // Center the curve around x = 15 (approximately half of 30)
+        const y = Math.pow(x, 2) + fluctuation; // Calculate y value based on x^2 curve with fluctuations
+        randomData.push(y);
         currentDate.setDate(currentDate.getDate() + 1); // Move to the next day
       }
 
@@ -113,11 +115,7 @@ const BoostedChart: React.FC = () => {
       <div className="flex justify-between items-center mb-4">
         <div className="flex gap-2">
           <label htmlFor="aiToggle">Enable AI </label>
-          <Switch
-            id="aiToggle"
-            checked={aiEnabled}
-            onChange={toggleAi}
-          />
+          <Switch id="aiToggle" checked={aiEnabled} onChange={toggleAi} />
         </div>
         <div className="flex gap-2">
           <Segmented

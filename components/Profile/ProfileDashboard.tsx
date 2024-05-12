@@ -2,7 +2,7 @@
 // components/ProfileDashboard.tsx
 
 import React, { useState, useEffect } from "react";
-import { Card, Button, Tooltip, message } from "antd";
+import { Card, message } from "antd";
 import { CopyOutlined } from "@ant-design/icons";
 import {
   LineChart,
@@ -10,7 +10,6 @@ import {
   Tooltip as RechartsTooltip,
   ResponsiveContainer,
 } from "recharts";
-import LeaderboardSection from "./LeaderboardCard";
 import ReferralHistory from "./ReferralHistory";
 import Loadbar from "./Loadbar";
 
@@ -52,11 +51,13 @@ const ProfileDashboard: React.FC = () => {
     <div className="p-4 lg:px-60">
       <h1 className="text-2xl font-bold mb-4">Referral Dashboard</h1>
       {/* Referrl code card with click to copy, share buttons */}
-      <div className="bg-gray-800 p-6 rounded-lg shadow-md text-white">
+      <div className="bg-gray-800 p-2 md:p-6 rounded-lg shadow-md text-white">
         <h2 className="text-2xl font-bold mb-4">Your Referral Code</h2>
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center space-x-4">
-            <div className="text-4xl font-semibold text-purple-500">R4K86ER</div>
+            <div className="text-4xl font-semibold text-purple-500">
+              R4K86ER
+            </div>
             <button
               onClick={handleCopyReferralCode}
               className="flex items-center justify-center bg-purple-500 text-white rounded-xl p-2 hover:bg-purple-600 focus:outline-none focus:ring focus:ring-purple-300"
@@ -75,26 +76,23 @@ const ProfileDashboard: React.FC = () => {
         </div>
       </div>
 
-      <div className="flex mt-6 gap-6">
-        <div className="bg-white p-6 rounded-xl flex justify-center items-center gap-4 w-fit">
-          <div className="bg-yellow-200 p-6 rounded-xl">
+      <div className="flex flex-col md:flex-row mt-6 gap-6">
+        <div className="bg-white p-6 rounded-xl flex flex-wrap justify-center items-center gap-4 w-fit">
+          <div className="bg-yellow-200 p-4 md:p-6 rounded-xl">
             <p className="text-xl text-gray-600">Tokens</p>
             <p className="font-bold text-6xl mt-2">100</p>
           </div>
-          <div className="bg-purple-200 p-6 rounded-xl">
+          <div className="bg-purple-200 p-4 md:p-6 rounded-xl">
             <p className="text-xl text-gray-600">Referrals</p>
             <p className="font-bold text-6xl mt-2">10</p>
           </div>
-          <div className="bg-gray-200 p-6 rounded-xl">
+          <div className="bg-gray-200 p-4 md:p-6 rounded-xl">
             <p className="text-xl text-gray-600">Global Rank</p>
-            <p className="font-bold text-6xl mt-2">
-              {" "}
-              #{user.rank}
-            </p>
+            <p className="font-bold text-6xl mt-2"> #{user.rank}</p>
           </div>
         </div>
         <div className="w-full gradient-bg rounded-xl p-6">
-          <h1 className="text-white font-bold font-2xl">EXP</h1>
+          <h1 className="text-white font-bold font-2xl">Points</h1>
           <p className="text-6xl font-bold text-yellow-400 mt-2">
             {(user.exp + 4.73) * 3}
           </p>

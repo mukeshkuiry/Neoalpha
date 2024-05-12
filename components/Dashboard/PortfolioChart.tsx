@@ -24,10 +24,10 @@ const PortfolioChart: React.FC = () => {
       currentDate.setDate(currentDate.getDate() - 29); // Start 30 days ago
 
       // Generate data for 30 days
-      for (let i = 0; i < 30; i++) {
+      for (let i = 0; i < 100; i++) {
         labels.push(currentDate.toLocaleDateString());
-        const fluctuation = Math.random() * 1000 - 500; // Random fluctuation between -500 and 500
-        data.push(5000 + fluctuation); // Starting value 5000
+        const fluctuation = Math.random()*10-5; 
+        data.push(data.length > 0 ? data[data.length-1] + fluctuation : 5000); // Starting value 5000
         currentDate.setDate(currentDate.getDate() + 1); // Move to the next day
       }
 
