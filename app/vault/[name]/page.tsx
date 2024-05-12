@@ -88,21 +88,21 @@ const Vault: React.FC<Props> = ({ params }) => {
           </div>
         </div>
         <Tooltip title="Coming soon">
-        <Segmented
-          size="small"
-          options={[
-            {
-              icon: <DollarCircleFilled />,
-              value: "dollar",
-            },
-            {
-              icon: <FaNetworkWired />,
-              value: "network",
-            },
-          ]}
-          value="dollar"
-          onChange={() => {}}
-        />
+          <Segmented
+            size="small"
+            options={[
+              {
+                icon: <DollarCircleFilled />,
+                value: "dollar",
+              },
+              {
+                icon: <FaNetworkWired />,
+                value: "network",
+              },
+            ]}
+            value="dollar"
+            onChange={() => {}}
+          />
         </Tooltip>
       </div>
       <div className="flex justify-between items-center mt-8">

@@ -40,6 +40,27 @@ export default function Navbar() {
         alt="Logo"
       />
 
+      <div className="flex gap-4">
+        <p
+          onClick={() => router.push("/app")}
+          className="cursor-pointer hover:text-gray-600 hover:bg-purple-200 rounded-full p-2 transition-all"
+        >
+          Home
+        </p>
+        <p
+          onClick={() => router.push("/staking")}
+          className="cursor-pointer hover:text-gray-600 hover:bg-purple-200 rounded-full p-2 transition-all"
+        >
+          Stake
+        </p>
+        <p
+          onClick={() => {}}
+          className="cursor-pointer hover:text-gray-600 hover:bg-purple-200 rounded-full p-2 transition-all"
+        >
+          Rewards
+        </p>
+      </div>
+
       <div className="flex justify-between items-center w-full lg:w-auto">
         <div
           className="flex items-center bg-green-400 hover:bg-green-500 hover:scale-105 transition-all cursor-pointer h-fit text-black text-lg pr-1.5 p-1 pl-4 rounded-full mb-4 lg:mb-0 lg:mr-4"
