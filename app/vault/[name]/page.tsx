@@ -3,10 +3,11 @@ import About from "@/components/Vault/About";
 import BoostedChart from "@/components/Vault/Chart";
 import {
   ArrowUpOutlined,
+  CalculatorFilled,
   TransactionOutlined,
   WalletOutlined,
 } from "@ant-design/icons";
-import { FloatButton } from "antd";
+import { Tooltip } from "antd";
 import Image from "next/image";
 
 type Props = {
@@ -43,13 +44,32 @@ const Vault: React.FC<Props> = ({ params }) => {
             Index Update
           </p>
         </div>
-        <div>
-          <div className="flex items-center bg-gray-400 hover:bg-gray-500 hover:scale-105 transition-all cursor-pointer h-fit text-black text-sm pr-1.5 p-1 pl-3 rounded-full">
-            <p>Contracts </p>{" "}
-            <p className="bg-white text-black p-1 px-2 ml-2 rounded-full rotate-45 hover:rotate-90 transition-all">
-              <ArrowUpOutlined />
-            </p>
-          </div>
+        <div className="flex jc items-center gap-4">
+          <Tooltip title="Coming soon">
+            <div className="flex items-center bg-gray-400 hover:bg-gray-500 hover:scale-105 transition-all cursor-pointer h-fit text-black text-sm pr-1.5 p-1 pl-3 rounded-full">
+              <p>Contracts </p>{" "}
+              <p className="bg-white text-black p-1 px-2 ml-2 rounded-full rotate-45 hover:rotate-90 transition-all">
+                <ArrowUpOutlined />
+              </p>
+            </div>
+          </Tooltip>
+
+          <Tooltip title="Coming soon">
+            <div className="flex items-center bg-gray-400 hover:bg-gray-500 hover:scale-105 transition-all cursor-pointer h-fit text-black text-sm pr-1.5 p-1 pl-3 rounded-full">
+              <p>Deposite </p>{" "}
+              <p className="bg-white text-black p-1 px-2 ml-2 rounded-full transition-all">
+                <TransactionOutlined />
+              </p>
+            </div>
+          </Tooltip>
+          <Tooltip title="Coming soon">
+            <div className="flex items-center bg-gray-400 hover:bg-gray-500 hover:scale-105 transition-all cursor-pointer h-fit text-black text-sm pr-1.5 p-1 pl-3 rounded-full">
+              <p>Stake </p>{" "}
+              <p className="bg-white text-black p-1 px-2 ml-2 rounded-full transition-all">
+                <WalletOutlined />
+              </p>
+            </div>
+          </Tooltip>
         </div>
       </div>
       <div className="p-6 rounded-2xl bg-white flex justify-between items-center mt-8">
@@ -85,28 +105,16 @@ const Vault: React.FC<Props> = ({ params }) => {
           </p>
         </div>
 
-        <div className="p-1.5 px-4 rounded-full bg-[#cececea2] flex justify-center items-center gap-2">
-          <p>🖩</p>
-          <p className="text-gray-700">Open Calculator</p>
-        </div>
+        <Tooltip title="Coming soon">
+          <div className="p-1.5 px-4 rounded-full bg-[#cececea2] flex justify-center items-center gap-2">
+            <CalculatorFilled />
+            <p className="text-gray-700">Open Calculator</p>
+          </div>
+        </Tooltip>
       </div>
+
       <BoostedChart />
       <About />
-      <FloatButton
-        className="fixed bottom-10 right-10"
-        icon={<WalletOutlined />}
-        onClick={() => console.log("deposit")}
-      >
-        Deposit
-      </FloatButton>
-      <FloatButton
-        className="fixed bottom-20 right-10"
-        icon={<TransactionOutlined />}
-        onClick={() => console.log("contract")}
-      >
-        Contract
-      </FloatButton>
-      
     </div>
   );
 };

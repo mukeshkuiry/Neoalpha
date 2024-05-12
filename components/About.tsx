@@ -48,7 +48,7 @@ export default function About() {
         </animated.div>
       </div>
       <div className="w-full items-center flex justify-center mt-20">
-        <Image src="/demo.gif" width={1000} height={1000} alt="Demo" />
+        <Image src="/demo.gif" width={1000} height={1000} alt="Demo"/>
       </div>
     </div>
   );
