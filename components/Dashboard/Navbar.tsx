@@ -64,7 +64,7 @@ export default function Navbar() {
                 <Button
                   type="primary"
                   className="mt-2 rounded-full w-full"
-                  onClick={() => console.log("Go to Profile")}
+                  onClick={() => router.push("/referral")}
                 >
                   Go to Profile
                 </Button>
