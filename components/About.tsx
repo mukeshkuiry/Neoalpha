@@ -24,7 +24,7 @@ export default function About() {
 
   return (
     <div>
-      <div className="flex flex-col lg:flex-row justify-between items-center text-white mt-28">
+      <div className="flex flex-col lg:flex-row justify-between items-center text-white mt-28 p-6 rounded-xl border bg-gray-900 py-10">
         <animated.p
           className="text-5xl lg:px-20 w-full lg:w-1/2 text-center lg:text-left mb-8 lg:mb-0 font-serif bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text"
           style={textAnimation}
@@ -35,7 +35,7 @@ export default function About() {
           className="lg:ml-8 w-full lg:w-1/2"
           style={buttonAnimation}
         >
-          <p className="text-xl">
+          <p className="text-lg">
             Our AI Agents leverage a vast array of on-chain data points to
             accurately forecast yields, volatility, and liquidity trends. This
             eliminates the need for manual liquidity allocation, as the AI

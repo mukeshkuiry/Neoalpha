@@ -47,14 +47,18 @@ export default function FAQ() {
     <div className="flex flex-col justify-center items-center mt-20">
       <h1 className="text-3xl font-bold mb-4">FAQ</h1>
       <p className="text-lg mb-4">Frequently Asked Questions</p>
-      <div className="w-full lg:w-2/3">
-        <Collapse items={items} style={{
-          backgroundColor: "#fff",
-          color: "white",
-          borderRadius: "8px",
-          marginBottom: "20px",
-        
-        }} bordered accordion />
+      <div className="w-full lg:w-3/4">
+        <Collapse
+          items={items}
+          style={{
+            backgroundColor: "rgb(216, 180 ,254, 0.8)",
+            color: "white",
+            borderRadius: "8px",
+            marginBottom: "20px",
+          }}
+          bordered
+          accordion
+        />
       </div>
     </div>
   );

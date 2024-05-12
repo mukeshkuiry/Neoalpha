@@ -13,7 +13,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="flex justify-between items-center py-4 px-6 text-white">
+    <div className="flex justify-between items-center py-4 px-4 lg:px-16 text-white">
       <Image
         onClick={() => router.push("/")}
         src={"/logo.png"}

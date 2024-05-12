@@ -4,8 +4,8 @@ import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
+import Powered from "@/components/Powered";
 import Protocols from "@/components/Protocols";
-import Strategy from "@/components/Strategy";
 
 export default async function Home() {
   await new Promise((resolve) => setTimeout(resolve, 2000));
@@ -17,6 +17,7 @@ export default async function Home() {
         <About />
         <Benifits />
         <Protocols />
+        <Powered/>
         {/* <Strategy /> */}
         <FAQ />
         <Footer />

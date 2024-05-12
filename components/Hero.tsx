@@ -34,7 +34,7 @@ export default function Hero() {
         <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
           Trustless Omnichain AI Agents
         </h1>
-        <p className="my-5 text-xl">
+        <p className="my-5 text-lg">
           ZKLiquid&apos;s AI Agents direct omnichain liquidity trustlessly using
           ZKML.
           <br />

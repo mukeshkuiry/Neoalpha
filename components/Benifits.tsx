@@ -12,7 +12,7 @@ export default function Benifits() {
           <h1 className="text-4xl mb-3 font-bold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text text-center lg:text-left">
             AI Agents you can trust
           </h1>
-          <p className="text-center text-xl lg:text-left">
+          <p className="text-center text-lg lg:text-left">
             ZKLiquid&apos;s ZKML implementation enables on-chain proving of
             private & predictive AI models which enables trustless & verifiable
             strategy execution.
@@ -31,7 +31,7 @@ export default function Benifits() {
           <h1 className="text-4xl mb-3 font-bold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text text-center lg:text-left">
             The lowest fees possible through DEX & Bridge aggregators.
           </h1>
-          <p className="text-center text-xl lg:text-left">
+          <p className="text-center text-lg lg:text-left">
             ZKLiquid elevates the DeFi experience by minimizing slippage and
             fees through the seamless integration of bridge and DEX aggregators.
           </p>
@@ -42,7 +42,7 @@ export default function Benifits() {
           <h1 className="text-4xl mb-3 font-bold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text text-center lg:text-left">
             Liquidity flows to where it&apos;s needed the most.
           </h1>
-          <p className="text-center text-xl lg:text-left my-2 mb-5">
+          <p className="text-center text-lg lg:text-left my-2 mb-5">
             Self-learning and predictive AI Agents allocate liquidity across
             multiple chains, assets, and protocols, ensuring sustainable growth
             in an ever-evolving DeFi landscape.

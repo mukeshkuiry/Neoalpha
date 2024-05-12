@@ -2,7 +2,7 @@
 // components/ProfileDashboard.tsx
 
 import React, { useState, useEffect } from "react";
-import { Card, Tag, message } from "antd";
+import { Card, Progress, Tag, message } from "antd";
 import { ArrowUpOutlined, ClockCircleFilled, CopyOutlined } from "@ant-design/icons";
 import { ResponsiveContainer } from "recharts";
 import ReferralHistory from "./ReferralHistory";
@@ -99,6 +99,14 @@ const ProfileDashboard: React.FC = () => {
           </p>
           <Loadbar />
         </div>
+      </div>
+      <div className="rounded-xl bg-purple-200 shadow-sm p-6 mt-8">
+        <div className="flex justify-between items-center">
+
+        <h1 className="text-lg font-semibold text-gray-500">APY BOOSTS</h1>
+        <h1 className="text-2xl font-semibold">$8750/60000</h1>
+        </div>
+        <Progress percent={50} showInfo={false} strokeColor={"purple"} strokeWidth={20} status="active"/>
       </div>
       <Card
         title="LQAI Token"

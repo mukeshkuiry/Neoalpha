@@ -37,7 +37,7 @@ export default function About() {
         <h1 className="text-2xl mb-2">The process of yield generation</h1>
         <div className="mb-6">
           <Image
-            src="/flow.svg"
+            src="/flow.png"
             alt="Flow image"
             height={200}
             width={700}
