@@ -77,7 +77,7 @@ const ProfileDashboard: React.FC = () => {
       </div>
 
       <div className="flex flex-col md:flex-row mt-6 gap-6">
-        <div className="bg-white p-6 rounded-xl flex flex-wrap justify-center items-center gap-4 w-fit">
+        <div className="bg-white p-6 rounded-xl flex flex-wrap md:flex-nowrap justify-center items-center gap-4 w-fit">
           <div className="bg-yellow-200 p-4 md:p-6 rounded-xl">
             <p className="text-xl text-gray-600">Tokens</p>
             <p className="font-bold text-6xl mt-2">100</p>
